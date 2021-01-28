@@ -15,7 +15,7 @@ struct LCS_EatsApp: App {
             TabView{
                 
                 NavigationView {
-                    OrderView()
+                    OrderReviewView()
                 }
                 .tabItem {
                     Image(systemName: "car.2")

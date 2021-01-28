@@ -12,5 +12,6 @@ struct Order: Identifiable {
     let date = NSDate()
     var name: String
     var phoneOrEmail: String
+    var specialInstructions: String
     var restaurant: Restaurant
 }
