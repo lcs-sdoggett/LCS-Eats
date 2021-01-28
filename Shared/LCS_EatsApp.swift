@@ -11,8 +11,16 @@ import SwiftUI
 struct LCS_EatsApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                OrderView()
+            
+            TabView{
+                
+                NavigationView {
+                    OrderView()
+                }
+                .tabItem {
+                    Image(systemName: "car.2")
+                    Text("Order")
+                }
             }
         }
     }
