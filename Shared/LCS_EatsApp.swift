@@ -11,7 +11,9 @@ import SwiftUI
 struct LCS_EatsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                OrderView()
+            }
         }
     }
 }
