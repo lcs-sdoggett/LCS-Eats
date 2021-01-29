@@ -18,55 +18,63 @@ struct CreateOrderView: View {
     
     var body: some View {
         VStack {
-            
-            Spacer()
-                .frame(height: 30)
-            
-            HStack {
-                Text("Name:")
-                    .padding(.leading)
+            VStack{
                 Spacer()
-            }
-            TextField("Name", text: $name)
-                .padding([.leading, .trailing])
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(height: 30)
             
-            Spacer()
-            
-            HStack {
-                Text("Phone Number:")
-                    .padding(.leading)
-                Spacer()
-            }
-            TextField("Phone Number/Email", text: $phoneNumberOrEmail)
-                .padding([.leading, .trailing])
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-            
-            Spacer()
-            
-            
-            HStack {
-                Text("Restaurant:")
-                    .padding(.leading)
-                Spacer()
-            }
-            
-            Picker("Restaurant", selection: $restaurant) {
-                Text(Restaurant.mcdonalds.rawValue).tag(Restaurant.mcdonalds)
-                Text(Restaurant.timHortons.rawValue).tag(Restaurant.timHortons)
-                Text(Restaurant.pizzaHut.rawValue).tag(Restaurant.pizzaHut)
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            
-            Spacer()
+                HStack {
+                    Text("Name:")
+                        .padding(.leading)
+                    Spacer()
+                }
+                TextField("Name", text: $name)
+                    .padding([.leading, .trailing])
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 
+                Spacer()
+                
+                HStack {
+                    Text("Phone Number:")
+                        .padding(.leading)
+                    Spacer()
+                }
+                TextField("Phone Number/Email", text: $phoneNumberOrEmail)
+                    .padding([.leading, .trailing])
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+
+                Spacer()
+                
+                
+                HStack {
+                    Text("Restaurant:")
+                        .padding(.leading)
+                    Spacer()
+                }
+                
+                Picker("Restaurant", selection: $restaurant) {
+                    Text(Restaurant.mcdonalds.rawValue).tag(Restaurant.mcdonalds)
+                    Text(Restaurant.timHortons.rawValue).tag(Restaurant.timHortons)
+                    Text(Restaurant.pizzaHut.rawValue).tag(Restaurant.pizzaHut)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                
+                Spacer()
+
+            }
+                            
             Button("Next") {
                 saveFirstScreen()
             }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.accentColor)
                 
-            .navigationTitle("New Order")
+            
+            .navigationTitle("Order")
         }
     }
+    
     func saveFirstScreen() {
         
     }
