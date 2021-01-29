@@ -11,6 +11,8 @@
 		7D36A48025C36C2E008B2E03 /* CreateOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36A47E25C36C2E008B2E03 /* CreateOrderView.swift */; };
 		7D52335125C49D56007E0277 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D52335025C49D56007E0277 /* Info.swift */; };
 		7D52335225C49D56007E0277 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D52335025C49D56007E0277 /* Info.swift */; };
+		7D52335C25C49E39007E0277 /* info.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D52335B25C49E39007E0277 /* info.json */; };
+		7D52335D25C49E39007E0277 /* info.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D52335B25C49E39007E0277 /* info.json */; };
 		7D5E46DA25C3A34100AC8811 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5E46D925C3A34100AC8811 /* Menu.swift */; };
 		7D5E46DB25C3A34100AC8811 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5E46D925C3A34100AC8811 /* Menu.swift */; };
 		7DCE5C9E25C320560077BB16 /* LCS_EatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE5C8B25C320540077BB16 /* LCS_EatsApp.swift */; };
@@ -28,6 +30,7 @@
 /* Begin PBXFileReference section */
 		7D36A47E25C36C2E008B2E03 /* CreateOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderView.swift; sourceTree = "<group>"; };
 		7D52335025C49D56007E0277 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		7D52335B25C49E39007E0277 /* info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info.json; sourceTree = "<group>"; };
 		7D5E46D925C3A34100AC8811 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		7DCE5C8B25C320540077BB16 /* LCS_EatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCS_EatsApp.swift; sourceTree = "<group>"; };
 		7DCE5C8D25C320560077BB16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 			children = (
 				7DCE5CB925C320FD0077BB16 /* Order.swift */,
 				7DCE5CC325C321C60077BB16 /* Restaurant.swift */,
+				7D52335B25C49E39007E0277 /* info.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D52335C25C49E39007E0277 /* info.json in Resources */,
 				7DCE5CA225C320560077BB16 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D52335D25C49E39007E0277 /* info.json in Resources */,
 				7DCE5CA325C320560077BB16 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
