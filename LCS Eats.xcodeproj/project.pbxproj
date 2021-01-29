@@ -112,8 +112,8 @@
 		7DCE5CAF25C3208B0077BB16 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7DCE5CB225C320B70077BB16 /* OrderReviewView.swift */,
 				7D36A47E25C36C2E008B2E03 /* CreateOrderView.swift */,
+				7DCE5CB225C320B70077BB16 /* OrderReviewView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
