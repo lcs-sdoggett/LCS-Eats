@@ -1,22 +1,32 @@
 [
     {
-        "question": "Where do I pick my up order?",
-        "answer": "We will bring your order to the Round Square area, which is next to the SLC."
+        "text": "Where do I pick my up order?",
+        "children": [
+            "text": "We will bring your order to the Round Square area, which is next to the SLC."
+        ]
     },
     {
-        "question": "Where do I pay?",
-        "answer": "We accept payment outside of the SLC between 12:45 and 1:30. We accept cash or card."
+        "text": "Where do I pay?",
+        "children": [
+            "text": "We accept payment outside of the SLC between 12:45 and 1:30. We accept cash or card."
+        ]
     },
     {
-        "question": "How much is delivery?",
-        "answer": "The delivery charge is based on the price of your order. If your order is between $0 - $5, there is $2 delivery. Between $5 - $10, $4 delivery. Between $10 - $20, $5 delivery. For orders over $20 there is a $7 delivery fee."
+        "text": "How much is delivery?",
+        "children": [
+            "text": "The delivery charge is based on the price of your order. If your order is between $0 - $5, there is $2 delivery. Between $5 - $10, $4 delivery. Between $10 - $20, $5 delivery. For orders over $20 there is a $7 delivery fee.."
+        ]
     },
     {
-        "question": "How can I get in contact with the people ordering?",
-        "answer": "Here are the numbers of the LCS Eats employees:"
+        "text": "How can I get in contact with the people ordering?",
+        "children": [
+            "text": "Here are the numbers of the LCS Eats employees:"
+        ]
     },
     {
-        "question": "What happens if the restaurant doesn't have what I ordered?",
-        "answer": "We keep track of all our orders, so we will bring you your order on our following business day, or a day we run of your choice."
+        "text": "What happens if the restaurant doesn't have what I ordered?",
+        "children": [
+            "text": "We keep track of all our orders, so we will bring you your order on our following business day, or a day we run of your choice."
+        ]
     },
 ]

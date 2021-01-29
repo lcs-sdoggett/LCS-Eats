@@ -8,8 +8,35 @@
 import SwiftUI
 
 struct InfoView: View {
+    
+    let info: [Info]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        List(info, id: \.text) { info in
+
+            // If there are children on this tip
+            if info.children != nil {
+                Label(info.text, systemImage: "quote.bubble")
+            } else {
+                Text(info.text)
+            }
+
+        }
+        
+    }
+    
+    init() {
+        
+        // Get pointer to file
+        let url = Bundle.main.url(forResource: "info", withExtension: "json")!
+        
+        // Load the contents of the JSON file
+        let data = try! Data(contentsOf: url)
+        
+        // Convert the data from the JSON file to the array
+        info = try! JSONDecoder().decode([Info].self, from: data)
+        
     }
 }
 
