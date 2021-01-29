@@ -9,13 +9,19 @@ import SwiftUI
 
 struct CreateOrderView: View {
     
+    @State private var showingRestaurantMenu = false
+    
     @State private var name = ""
-    @State private var phoneNumber = ""
+    @State private var phoneNumberOrEmail = ""
     
     @State private var restaurant = Restaurant.mcdonalds
     
     var body: some View {
         VStack {
+            
+            Spacer()
+                .frame(height: 30)
+            
             HStack {
                 Text("Name:")
                     .padding(.leading)
@@ -25,14 +31,18 @@ struct CreateOrderView: View {
                 .padding([.leading, .trailing])
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
+            Spacer()
+            
             HStack {
                 Text("Phone Number:")
                     .padding(.leading)
                 Spacer()
             }
-            TextField("Phone Number", text: $phoneNumber)
+            TextField("Phone Number/Email", text: $phoneNumberOrEmail)
                 .padding([.leading, .trailing])
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            Spacer()
             
             HStack {
                 Text("Restaurant:")
@@ -46,6 +56,17 @@ struct CreateOrderView: View {
                 Text(Restaurant.pizzaHut.rawValue).tag(Restaurant.pizzaHut)
             }
             .pickerStyle(SegmentedPickerStyle())
+            
+            Spacer()
+            
+            .navigationTitle("New Order")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Next") {
+                        showingRestaurantMenu = true
+                    }
+                }
+            }
         }
 
     }
