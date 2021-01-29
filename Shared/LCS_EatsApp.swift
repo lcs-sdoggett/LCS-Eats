@@ -21,6 +21,15 @@ struct LCS_EatsApp: App {
                     Image(systemName: "car.2")
                     Text("Order")
                 }
+                
+                NavigationView {
+                    InfoView()
+                }
+                .tabItem {
+                    Image(systemName: "person.fill.questionmark")
+                    Text("Info")
+                }
+                
             }
         }
     }
