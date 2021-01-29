@@ -60,13 +60,6 @@ struct CreateOrderView: View {
             Spacer()
             
             .navigationTitle("New Order")
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button("Next") {
-                        showingRestaurantMenu = true
-                    }
-                }
-            }
         }
 
     }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7D36A47F25C36C2E008B2E03 /* CreateOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36A47E25C36C2E008B2E03 /* CreateOrderView.swift */; };
 		7D36A48025C36C2E008B2E03 /* CreateOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36A47E25C36C2E008B2E03 /* CreateOrderView.swift */; };
+		7D5E46DA25C3A34100AC8811 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5E46D925C3A34100AC8811 /* MenuView.swift */; };
+		7D5E46DB25C3A34100AC8811 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5E46D925C3A34100AC8811 /* MenuView.swift */; };
 		7DCE5C9E25C320560077BB16 /* LCS_EatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE5C8B25C320540077BB16 /* LCS_EatsApp.swift */; };
 		7DCE5C9F25C320560077BB16 /* LCS_EatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE5C8B25C320540077BB16 /* LCS_EatsApp.swift */; };
 		7DCE5CA225C320560077BB16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DCE5C8D25C320560077BB16 /* Assets.xcassets */; };
@@ -23,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		7D36A47E25C36C2E008B2E03 /* CreateOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderView.swift; sourceTree = "<group>"; };
+		7D5E46D925C3A34100AC8811 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		7DCE5C8B25C320540077BB16 /* LCS_EatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCS_EatsApp.swift; sourceTree = "<group>"; };
 		7DCE5C8D25C320560077BB16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DCE5C9225C320560077BB16 /* LCS Eats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LCS Eats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +117,7 @@
 			children = (
 				7D36A47E25C36C2E008B2E03 /* CreateOrderView.swift */,
 				7DCE5CB225C320B70077BB16 /* OrderReviewView.swift */,
+				7D5E46D925C3A34100AC8811 /* MenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DCE5CC425C321C60077BB16 /* Restaurant.swift in Sources */,
+				7D5E46DA25C3A34100AC8811 /* MenuView.swift in Sources */,
 				7D36A47F25C36C2E008B2E03 /* CreateOrderView.swift in Sources */,
 				7DCE5CBA25C320FD0077BB16 /* Order.swift in Sources */,
 				7DCE5CB325C320B70077BB16 /* OrderReviewView.swift in Sources */,
@@ -228,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DCE5CC525C321C60077BB16 /* Restaurant.swift in Sources */,
+				7D5E46DB25C3A34100AC8811 /* MenuView.swift in Sources */,
 				7D36A48025C36C2E008B2E03 /* CreateOrderView.swift in Sources */,
 				7DCE5CBB25C320FD0077BB16 /* Order.swift in Sources */,
 				7DCE5CB425C320B70077BB16 /* OrderReviewView.swift in Sources */,
