@@ -44,6 +44,7 @@ struct CreateOrderView: View {
             
             Spacer()
             
+            
             HStack {
                 Text("Restaurant:")
                     .padding(.leading)
@@ -58,10 +59,16 @@ struct CreateOrderView: View {
             .pickerStyle(SegmentedPickerStyle())
             
             Spacer()
-            
+                
+            Button("Next") {
+                saveFirstScreen()
+            }
+                
             .navigationTitle("New Order")
         }
-
+    }
+    func saveFirstScreen() {
+        
     }
 }
 
