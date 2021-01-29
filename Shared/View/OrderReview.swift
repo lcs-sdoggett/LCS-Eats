@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OrderReviewView: View {
+struct OrderReview: View {
     var body: some View {
         
         VStack {
@@ -79,10 +79,10 @@ struct OrderReviewView: View {
     }
 }
 
-struct OrderReviewView_Previews: PreviewProvider {
+struct OrderReview_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            OrderReviewView()
+            OrderReview()
         }
     }
 }
