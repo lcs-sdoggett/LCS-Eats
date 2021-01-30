@@ -72,7 +72,10 @@ struct OrderReview: View {
             Button("Place Order Total: $8.34") {
                 
             }
-            .padding(.top)
+            .padding()
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .foregroundColor(.white)
+            .background(Color.accentColor)
             
             .navigationTitle("Order Summary")
         }
