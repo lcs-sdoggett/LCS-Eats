@@ -9,6 +9,6 @@ import Foundation
 
 struct Info: Decodable {
     let text: String
-    let children: [String]?
+    let children: [Info]?
     
 }
