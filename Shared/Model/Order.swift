@@ -6,12 +6,20 @@
 //
 
 import Foundation
+import Combine
 
-struct Order: Identifiable {
+
+
+class Order: Identifiable, ObservableObject {
+    var didChange = PassthroughSubject<Void, Never>()
+    
     let id = UUID()
     let date = NSDate()
-    var name: String
-    var phoneOrEmail: String
-    var specialInstructions: String
-    var restaurant: Restaurant
+    var name = "" { didSet { update() }}
+    var phoneOrEmail = "" { didSet { update() }}
+    static let restaurant = ["Mcdonalds", "Tim Hortons", "Pizza Hut"]
+    
+    func update() {
+        didChange.send(())
+    }
 }

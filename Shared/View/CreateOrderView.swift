@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import Combine
+
+
 
 struct CreateOrderView: View {
     
@@ -18,19 +21,15 @@ struct CreateOrderView: View {
     
     var body: some View {
         VStack {
-            VStack{
-                Spacer()
-                    .frame(height: 30)
-            
-                HStack {
+            Form {
+                Section {
                     Text("Name:")
                         .padding(.leading)
-                    Spacer()
-                }
                 TextField("Name", text: $name)
                     .padding([.leading, .trailing])
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                
+                }
+    
                 Spacer()
                 
                 HStack {
