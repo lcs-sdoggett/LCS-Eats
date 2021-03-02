@@ -18,6 +18,13 @@ class Order: Identifiable, ObservableObject {
     var restaurant = 0 { didSet { update() }}
     static let restaurants = ["Mcdonalds", "Tim Hortons", "Pizza Hut"]
     
+    var validOrder: Bool {
+        if name.isEmpty || phoneOrEmail.isEmpty {
+            return false
+        }
+        return true
+    }
+    
     func update() {
         didChange.send(())
     }
