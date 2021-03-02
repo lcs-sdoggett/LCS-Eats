@@ -12,66 +12,59 @@ import Combine
 
 struct CreateOrderView: View {
     
+    @ObservedObject var order = Order()
+    
     @State private var showingRestaurantMenu = false
     
     @State private var name = ""
     @State private var phoneNumberOrEmail = ""
     
-    @State private var restaurant = Restaurant.mcdonalds
-    
     var body: some View {
-        VStack {
-            Form {
-                Section {
-                    Text("Name:")
-                        .padding(.leading)
+        
+        Form {
+            
+            Section {
+                
+                Text("Name:")
+                    .padding(.leading)
+                
                 TextField("Name", text: $name)
                     .padding([.leading, .trailing])
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-    
-                Spacer()
+            }
+            
+            Section {
                 
-                HStack {
-                    Text("Phone Number:")
-                        .padding(.leading)
-                    Spacer()
-                }
+                Text("Phone Number:")
+                    .padding(.leading)
+                
                 TextField("Phone Number/Email", text: $phoneNumberOrEmail)
                     .padding([.leading, .trailing])
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-
-                Spacer()
-                
-                
-                HStack {
-                    Text("Restaurant:")
-                        .padding(.leading)
-                    Spacer()
-                }
-                
-                Picker("Restaurant", selection: $restaurant) {
-                    Text(Restaurant.mcdonalds.rawValue).tag(Restaurant.mcdonalds)
-                    Text(Restaurant.timHortons.rawValue).tag(Restaurant.timHortons)
-                    Text(Restaurant.pizzaHut.rawValue).tag(Restaurant.pizzaHut)
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                
-                Spacer()
-
             }
-                            
+            
+            Section {
+                Text("Restaurant:")
+                    .padding(.leading)
+                
+                Picker("Restaurant:", selection: $order.restaurant) {
+                    ForEach(0 ..< Order.restaurants.count) {
+                        Text(Order.restaurants[$0]).tag($0)
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+            }
+            
             Button("Next") {
                 saveFirstScreen()
             }
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .foregroundColor(.white)
-                .padding()
-                .background(Color.accentColor)
-                
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .foregroundColor(.white)
+            .padding()
+            .background(Color.accentColor)
             
-            .navigationTitle("Order")
-        }
+            
+            
+        }.navigationTitle("Order")
     }
     
     func saveFirstScreen() {
