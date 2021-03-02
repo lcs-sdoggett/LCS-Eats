@@ -25,3 +25,5 @@ class Order: ObservableObject, Codable {
         didChange.send(())
     }
 }
+
+let testData = [Order()]

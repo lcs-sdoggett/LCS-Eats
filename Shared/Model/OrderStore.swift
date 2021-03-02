@@ -14,3 +14,5 @@ class OrderStore: ObservableObject {
         self.orders = orders
     }
 }
+
+let testStore = OrderStore(orders: testData)

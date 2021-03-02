@@ -14,6 +14,8 @@ struct CreateOrderView: View {
     
     @State private var showingRestaurantMenu = false
     
+    @ObservedObject var store: OrderStore
+    
     @ObservedObject var order = Order()
     
     @State private var name = ""
@@ -60,14 +62,13 @@ struct CreateOrderView: View {
     
     func saveFirstScreen() {
         
-        
     }
 }
 
 struct CreateOrderView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CreateOrderView()
+            CreateOrderView(store: testStore)
         }
     }
 }
