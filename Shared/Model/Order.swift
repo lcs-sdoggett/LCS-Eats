@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class Order: Identifiable, ObservableObject, Codable {
+class Order: ObservableObject, Codable {
     enum CodingKeys: String, CodingKey {
         case name, phoneOrEmail, restaurant
     }
