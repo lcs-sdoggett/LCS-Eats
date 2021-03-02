@@ -46,22 +46,20 @@ struct CreateOrderView: View {
             
             Section {
                 Button("Next") {
-                    saveFirstScreen()
+                    self.saveFirstScreen()
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding()
                 .foregroundColor(.white)
                 .background(Color.accentColor)
-            }.disabled(!order.validOrder)
+            }
             
         }.navigationTitle("Order")
         
     }
-    
-}
-
-func saveFirstScreen() {
-     
+    func saveFirstScreen() {
+         
+    }
 }
 
 struct CreateOrderView_Previews: PreviewProvider {

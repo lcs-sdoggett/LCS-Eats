@@ -112,9 +112,9 @@
 		7DCE5CAE25C320860077BB16 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7DCE5CB925C320FD0077BB16 /* Order.swift */,
 				7D52335B25C49E39007E0277 /* info.json */,
 				7D52336025C4A04D007E0277 /* Info.swift */,
+				7DCE5CB925C320FD0077BB16 /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
