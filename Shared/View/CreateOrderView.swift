@@ -14,10 +14,10 @@ struct CreateOrderView: View {
     
     @State private var showingRestaurantMenu = false
     
+    @State private var restaurant = Restaurant.mcdonalds
+    
     @ObservedObject var store: OrderStore
-    
-    @ObservedObject var order = Order()
-    
+        
     @State private var name = ""
     @State private var phoneNumberOrEmail = ""
     
@@ -27,7 +27,7 @@ struct CreateOrderView: View {
             Section {
                 Text("Name:")
                 
-                TextField("Name", text: $order.name)
+                TextField("Name", text: $name)
             }
             
             Section {
@@ -38,10 +38,10 @@ struct CreateOrderView: View {
             
             Section {
                 Text("Restaurant:")
-                Picker("Restaurant:", selection: $order.restaurant) {
-                    ForEach(0 ..< Order.restaurants.count) {
-                        Text(Order.restaurants[$0]).tag($0)
-                    }
+                Picker("Restaurant", selection: $restaurant) {
+                    Text(Restaurant.mcdonalds.rawValue).tag(Restaurant.mcdonalds)
+                    Text(Restaurant.timHortons.rawValue).tag(Restaurant.timHortons)
+                    Text(Restaurant.pizzaHut.rawValue).tag(Restaurant.pizzaHut)
                 }
                 .pickerStyle(SegmentedPickerStyle())
             }
@@ -61,6 +61,7 @@ struct CreateOrderView: View {
     }
     
     func saveFirstScreen() {
+        
         
     }
 }

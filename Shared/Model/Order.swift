@@ -8,22 +8,21 @@
 import Foundation
 import Combine
 
-class Order: ObservableObject, Codable {
-    enum CodingKeys: String, CodingKey {
-        case name, phoneOrEmail, restaurant
+class Order: ObservableObject, Identifiable {
+    
+    var id = UUID()
+    var name: String
+    var phoneOrEmail: String
+    var restaurant: Restaurant
+    
+    internal init(id: UUID = UUID(), name: String, phoneOrEmail: String, restaurant: Restaurant) {
+        self.id = id
+        self.name = name
+        self.phoneOrEmail = phoneOrEmail
+        self.restaurant = restaurant
     }
-    
-    var didChange = PassthroughSubject<Void, Never>()
-    
-    var name = "" { didSet { update() }}
-    var phoneOrEmail = "" { didSet { update() }}
-    var restaurant = 0 { didSet { update() }}
-    
-    static let restaurants = ["Mcdonalds", "Tim Hortons", "Pizza Hut"]
-    
-    func update() {
-        didChange.send(())
-    }
+
+        
 }
 
-let testData = [Order()]
+let testData = [Order(name: "scott", phoneOrEmail: "9057853261", restaurant: .mcdonalds)]
