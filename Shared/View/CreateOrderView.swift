@@ -57,11 +57,15 @@ struct CreateOrderView: View {
             }
             
         }.navigationTitle("Order")
+        .sheet(isPresented: $showingRestaurantMenu) {
+            MenuView(showing: $showingRestaurantMenu)
+        }
         
     }
     
     func saveFirstScreen() {
         
+        showingRestaurantMenu = true
         
     }
 }
