@@ -58,7 +58,7 @@ struct CreateOrderView: View {
             
         }.navigationTitle("Order")
         .sheet(isPresented: $showingRestaurantMenu) {
-            MenuView(showing: $showingRestaurantMenu)
+            MenuView(showing: $showingRestaurantMenu, store: store)
         }
         
     }
@@ -67,7 +67,7 @@ struct CreateOrderView: View {
         showingRestaurantMenu = true
         
         store.orders.append(Order(name: name, phoneOrEmail: phoneNumberOrEmail, restaurant: restaurant))
-     
+             
     }
 }
 

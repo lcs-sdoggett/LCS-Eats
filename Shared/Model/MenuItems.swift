@@ -23,3 +23,5 @@ var timsmenu = [Item(name: "Donut", price: 0.99, imageName: "THdonut"),
                 Item(name: "Muffin", price: 1.49, imageName: "THmuffin"),
                 Item(name: "Danish", price: 1.49, imageName: "THdanish")
 ]
+
+
