@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D0B850925F13A4700CC959E /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0B850825F13A4700CC959E /* MenuItems.swift */; };
+		7D0B850A25F13A4700CC959E /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0B850825F13A4700CC959E /* MenuItems.swift */; };
 		7D36A47F25C36C2E008B2E03 /* CreateOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36A47E25C36C2E008B2E03 /* CreateOrderView.swift */; };
 		7D36A48025C36C2E008B2E03 /* CreateOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36A47E25C36C2E008B2E03 /* CreateOrderView.swift */; };
 		7D51DA4E25EF032300983C41 /* OrderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51DA4D25EF032300983C41 /* OrderStore.swift */; };
@@ -32,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D0B850825F13A4700CC959E /* MenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		7D36A47E25C36C2E008B2E03 /* CreateOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderView.swift; sourceTree = "<group>"; };
 		7D51DA4D25EF032300983C41 /* OrderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStore.swift; sourceTree = "<group>"; };
 		7D51DA5225EF093600983C41 /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 				7DCE5CB925C320FD0077BB16 /* Order.swift */,
 				7D51DA4D25EF032300983C41 /* OrderStore.swift */,
 				7D51DA5225EF093600983C41 /* Restaurants.swift */,
+				7D0B850825F13A4700CC959E /* MenuItems.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +248,7 @@
 				7D51DA4E25EF032300983C41 /* OrderStore.swift in Sources */,
 				7DCE5CBA25C320FD0077BB16 /* Order.swift in Sources */,
 				7DCE5CB325C320B70077BB16 /* OrderReview.swift in Sources */,
+				7D0B850925F13A4700CC959E /* MenuItems.swift in Sources */,
 				7D51DA5325EF093600983C41 /* Restaurants.swift in Sources */,
 				7DCE5C9E25C320560077BB16 /* LCS_EatsApp.swift in Sources */,
 			);
@@ -260,6 +265,7 @@
 				7D51DA4F25EF032300983C41 /* OrderStore.swift in Sources */,
 				7DCE5CBB25C320FD0077BB16 /* Order.swift in Sources */,
 				7DCE5CB425C320B70077BB16 /* OrderReview.swift in Sources */,
+				7D0B850A25F13A4700CC959E /* MenuItems.swift in Sources */,
 				7D51DA5425EF093600983C41 /* Restaurants.swift in Sources */,
 				7DCE5C9F25C320560077BB16 /* LCS_EatsApp.swift in Sources */,
 			);
