@@ -14,15 +14,17 @@ struct MenuView: View {
     
     @ObservedObject var store: OrderStore
     
-    @ObservedObject var menu: Menu
-                
+    var menu = Menu()
+    
     var body: some View {
         
         let restaurantChoice = store.orders[store.orders.count-1].restaurant
         
         if restaurantChoice.rawValue == "Mcdonalds" {
             Form {
-            
+                ForEach(0..<menu.mcdonaldsMenu.count) { item in
+                    
+                }
             }
         } else if restaurantChoice.rawValue == "Tim Hortons" {
             Form {
