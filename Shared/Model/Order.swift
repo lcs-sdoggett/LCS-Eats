@@ -15,8 +15,7 @@ class Order: ObservableObject, Identifiable {
     var phoneOrEmail: String
     var restaurant: Restaurant
     
-    internal init(id: UUID = UUID(), name: String, phoneOrEmail: String, restaurant: Restaurant) {
-        self.id = id
+    internal init(name: String, phoneOrEmail: String, restaurant: Restaurant) {
         self.name = name
         self.phoneOrEmail = phoneOrEmail
         self.restaurant = restaurant

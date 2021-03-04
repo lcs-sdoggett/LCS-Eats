@@ -64,9 +64,10 @@ struct CreateOrderView: View {
     }
     
     func saveFirstScreen() {
-        
         showingRestaurantMenu = true
         
+        store.orders.append(Order(name: name, phoneOrEmail: phoneNumberOrEmail, restaurant: restaurant))
+     
     }
 }
 
