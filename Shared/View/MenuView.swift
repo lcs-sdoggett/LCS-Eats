@@ -13,7 +13,7 @@ struct MenuView: View {
     @Binding var showing: Bool
     
     @ObservedObject var store: OrderStore
-        
+            
     var body: some View {
         
         let restaurantChoice = store.orders[store.orders.count-1].restaurant
