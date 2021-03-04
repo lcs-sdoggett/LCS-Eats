@@ -13,7 +13,9 @@ struct MenuView: View {
     @Binding var showing: Bool
     
     @ObservedObject var store: OrderStore
-            
+    
+    @ObservedObject var menu: Menu
+                
     var body: some View {
         
         let restaurantChoice = store.orders[store.orders.count-1].restaurant
@@ -36,6 +38,6 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(showing: .constant(true), store: testStore)
+        MenuView(showing: .constant(true), store: testStore, menu: testMenu)
     }
 }

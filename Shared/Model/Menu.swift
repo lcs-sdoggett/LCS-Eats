@@ -21,5 +21,6 @@ class Menu: ObservableObject {
         Item(name: "Muffin", price: 1.49, imageName: "THmuffin"),
         Item(name: "Danish", price: 1.49, imageName: "THdanish")
     ]
-
 }
+
+let testMenu = Menu()

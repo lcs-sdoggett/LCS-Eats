@@ -17,6 +17,8 @@ struct CreateOrderView: View {
     @State private var restaurant = Restaurant.mcdonalds
     
     @ObservedObject var store: OrderStore
+    
+    @ObservedObject var menu: Menu
         
     @State private var name = ""
     @State private var phoneNumberOrEmail = ""
@@ -58,7 +60,7 @@ struct CreateOrderView: View {
             
         }.navigationTitle("Order")
         .sheet(isPresented: $showingRestaurantMenu) {
-            MenuView(showing: $showingRestaurantMenu, store: store)
+            MenuView(showing: $showingRestaurantMenu, store: store, menu: Menu())
         }
         
     }
@@ -67,14 +69,14 @@ struct CreateOrderView: View {
         showingRestaurantMenu = true
         
         store.orders.append(Order(name: name, phoneOrEmail: phoneNumberOrEmail, restaurant: restaurant))
-             
+            
     }
 }
 
 struct CreateOrderView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CreateOrderView(store: testStore)
+            CreateOrderView(store: testStore, menu: testMenu)
         }
     }
 }
