@@ -31,6 +31,14 @@ struct MenuView: View {
                             .scaledToFill()
                             .frame(width: 70, height: 70, alignment: .center)
                         Text(menu.mcdonaldsMenu[item].name)
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            showingItemCustomization = true
+                        }) {
+                            Image(systemName: "arrow.forward.circle")
+                        }
                     }
                 }
             }
