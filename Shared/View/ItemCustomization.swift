@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct ItemCustomization: View {
-
-    let item: Item
+    
+    @Binding var showingItemCustomization: Bool
+    
+    let itemIndex: Int
+        
+    var menu = Menu()
     
     var body: some View {
         Form {
@@ -22,7 +26,7 @@ struct ItemCustomization: View {
 struct ItemCustomization_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ItemCustomization(item: Item.example)
+            ItemCustomization(showingItemCustomization: .constant(true), itemIndex: 0)
         }
     }
 }

@@ -35,11 +35,14 @@ struct MenuView: View {
                         Spacer()
                         
                         Button(action: {
+                            
                             showingItemCustomization = true
                         }) {
                             Image(systemName: "arrow.forward.circle")
                         }
                     }
+                }.sheet(isPresented: $showingItemCustomization) {
+                    ItemCustomization(showingItemCustomization: $showingItemCustomization, itemIndex: 0)
                 }
             }
         } else if restaurantChoice.rawValue == "Tim Hortons" {

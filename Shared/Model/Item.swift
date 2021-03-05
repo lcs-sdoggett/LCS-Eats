@@ -13,6 +13,4 @@ struct Item: Identifiable {
     let name: String
     let price: Double
     let imageName: String
-    
-    static let example = Item(name: "Big Mac", price: 6.19, imageName: "MDbigmac")
 }

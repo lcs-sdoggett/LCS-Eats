@@ -9,13 +9,13 @@ import SwiftUI
 
 struct CreateOrderView: View {
     
-    @State private var showingRestaurantMenu = false
+    @State private var showingMenu = false
     
     @State private var restaurant = Restaurant.mcdonalds
     
-    @ObservedObject var store: OrderStore
-    
     var menu = Menu()
+    
+    @ObservedObject var store: OrderStore
         
     @State private var name = ""
     @State private var phoneNumberOrEmail = ""
@@ -56,14 +56,14 @@ struct CreateOrderView: View {
             }
             
         }.navigationTitle("Order")
-        .sheet(isPresented: $showingRestaurantMenu) {
-            MenuView(showingMenu: $showingRestaurantMenu, store: store, menu: Menu())
+        .sheet(isPresented: $showingMenu) {
+            MenuView(showingMenu: $showingMenu, store: store, menu: menu)
         }
         
     }
     
     func saveFirstScreen() {
-        showingRestaurantMenu = true
+        showingMenu = true
         
         store.orders.append(Order(name: name, phoneOrEmail: phoneNumberOrEmail, restaurant: restaurant))
             
@@ -73,7 +73,7 @@ struct CreateOrderView: View {
 struct CreateOrderView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CreateOrderView(store: testStore, menu: testMenu)
+            CreateOrderView(menu: testMenu, store: testStore)
         }
     }
 }
