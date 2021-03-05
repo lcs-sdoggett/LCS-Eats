@@ -9,6 +9,7 @@ import Foundation
 
 struct Item: Identifiable {
     let id = UUID()
+    var itemChosen = false
     let name: String
     let price: Double
     let imageName: String

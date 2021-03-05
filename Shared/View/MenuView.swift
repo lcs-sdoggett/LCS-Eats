@@ -14,7 +14,7 @@ struct MenuView: View {
     
     @ObservedObject var store: OrderStore
     
-    var menu = Menu()
+    @State var menu = Menu()
     
     var body: some View {
         
@@ -23,24 +23,28 @@ struct MenuView: View {
         if restaurantChoice.rawValue == "Mcdonalds" {
             Form {
                 ForEach(0..<menu.mcdonaldsMenu.count) { item in
-                    HStack {
-                        Image(menu.mcdonaldsMenu[item].imageName)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 70, height: 70, alignment: .center)
-                        Text(menu.mcdonaldsMenu[item].name)
+                    Toggle(isOn: $menu.mcdonaldsMenu[item].itemChosen) {
+                        HStack {
+                            Image(menu.mcdonaldsMenu[item].imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 70, height: 70, alignment: .center)
+                            Text(menu.mcdonaldsMenu[item].name)
+                        }
                     }
                 }
             }
         } else if restaurantChoice.rawValue == "Tim Hortons" {
             Form {
                 ForEach(0..<menu.timsmenu.count) { item in
-                    HStack {
-                        Image(menu.timsmenu[item].imageName)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 70, height: 70, alignment: .center)
-                        Text(menu.timsmenu[item].name)
+                    Toggle(isOn: $menu.timsmenu[item].itemChosen) {
+                        HStack {
+                            Image(menu.timsmenu[item].imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 70, height: 70, alignment: .center)
+                            Text(menu.timsmenu[item].name)
+                        }
                     }
                 }
             }
