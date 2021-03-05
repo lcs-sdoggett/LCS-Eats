@@ -23,12 +23,26 @@ struct MenuView: View {
         if restaurantChoice.rawValue == "Mcdonalds" {
             Form {
                 ForEach(0..<menu.mcdonaldsMenu.count) { item in
-                    
+                    HStack {
+                        Image(menu.mcdonaldsMenu[item].imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 70, height: 70, alignment: .center)
+                        Text(menu.mcdonaldsMenu[item].name)
+                    }
                 }
             }
         } else if restaurantChoice.rawValue == "Tim Hortons" {
             Form {
-                
+                ForEach(0..<menu.timsmenu.count) { item in
+                    HStack {
+                        Image(menu.timsmenu[item].imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 70, height: 70, alignment: .center)
+                        Text(menu.timsmenu[item].name)
+                    }
+                }
             }
         } else if restaurantChoice.rawValue == "Pizza Hut" {
             Form {

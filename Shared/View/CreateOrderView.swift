@@ -18,7 +18,7 @@ struct CreateOrderView: View {
     
     @ObservedObject var store: OrderStore
     
-    @ObservedObject var menu: Menu
+    var menu = Menu()
         
     @State private var name = ""
     @State private var phoneNumberOrEmail = ""
