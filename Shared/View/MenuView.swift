@@ -10,7 +10,9 @@ import SwiftUI
 struct MenuView: View {
     
     // Weather to show this view
-    @Binding var showing: Bool
+    @Binding var showingMenu: Bool
+    
+    @State private var showingItemCustomization = false
     
     @ObservedObject var store: OrderStore
     
@@ -22,15 +24,13 @@ struct MenuView: View {
         
         if restaurantChoice.rawValue == "Mcdonalds" {
             Form {
-                ForEach(0..<menu.mcdonaldsMenu.count) { item in
-                    Toggle(isOn: $menu.mcdonaldsMenu[item].itemChosen) {
-                        HStack {
-                            Image(menu.mcdonaldsMenu[item].imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 70, height: 70, alignment: .center)
-                            Text(menu.mcdonaldsMenu[item].name)
-                        }
+                List(0..<menu.mcdonaldsMenu.count) { item in
+                    HStack {
+                        Image(menu.mcdonaldsMenu[item].imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 70, height: 70, alignment: .center)
+                        Text(menu.mcdonaldsMenu[item].name)
                     }
                 }
             }
@@ -58,6 +58,9 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(showing: .constant(true), store: testStore, menu: testMenu)
+        NavigationView {
+            MenuView(showingMenu: .constant(true), store: testStore, menu: testMenu)
+            
+        }
     }
 }
