@@ -18,7 +18,7 @@ struct MenuView: View {
     
     @State var menu = Menu()
     
-    @State private var itemIndex = 0
+    @State private var itemIndex = 2
     
     var body: some View {
         
@@ -26,24 +26,24 @@ struct MenuView: View {
         
         if restaurantChoice.rawValue == "Mcdonalds" {
             Form {
-                    ForEach(menu.mcdonaldsMenu, id: \.id) { item in
-                        HStack {
-                            Image(item.imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 70, height: 70, alignment: .center)
-                            Text(item.name)
-                            
-                            Spacer()
-                            
-                            Button(action: {
-                                showingItemCustomization = true
-                            }) {
-                                Image(systemName: "arrow.forward.circle")
-                            }
+                ForEach(menu.mcdonaldsMenu, id: \.id) { item in
+                    HStack {
+                        Image(item.imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 70, height: 70, alignment: .center)
+                        Text(item.name)
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            showingItemCustomization = true
+                        }) {
+                            Image(systemName: "arrow.forward.circle")
                         }
+                    }
                 }.sheet(isPresented: $showingItemCustomization) {
-                    ItemCustomization(showingItemCustomization: $showingItemCustomization, itemIndex: itemIndex)
+                    ItemCustomization(showingItemCustomization: $showingItemCustomization)
                 }
             }
         } else if restaurantChoice.rawValue == "Tim Hortons" {
