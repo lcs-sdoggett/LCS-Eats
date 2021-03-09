@@ -13,6 +13,5 @@ struct Item: Identifiable {
     let name: String
     let price: Double
     let imageName: String
-    let index: Int
     var quantity = 1
 }
