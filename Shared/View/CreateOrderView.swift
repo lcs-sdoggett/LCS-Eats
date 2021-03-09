@@ -16,7 +16,7 @@ struct CreateOrderView: View {
     var menu = Menu()
     
     @ObservedObject var store: OrderStore
-        
+    
     @State private var name = ""
     @State private var phoneNumberOrEmail = ""
     
@@ -45,15 +45,13 @@ struct CreateOrderView: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
             
-            Section {
-                Button("Next") {
-                    self.saveFirstScreen()
-                }
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.accentColor)
+            Button("Next") {
+                self.saveFirstScreen()
             }
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .padding()
+            .foregroundColor(.white)
+            .background(Color.accentColor)
             
         }.navigationTitle("Order")
         .sheet(isPresented: $showingMenu) {
@@ -66,7 +64,7 @@ struct CreateOrderView: View {
         showingMenu = true
         
         store.orders.append(Order(name: name, phoneOrEmail: phoneNumberOrEmail, restaurant: restaurant))
-            
+        
     }
 }
 

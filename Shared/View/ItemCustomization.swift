@@ -11,14 +11,27 @@ struct ItemCustomization: View {
     
     @Binding var showingItemCustomization: Bool
     
-    let itemIndex: Int
+    var itemIndex: Int
         
-    var menu = Menu()
+    @State var menu = Menu()
+    
+    @State var quantity = 1
     
     var body: some View {
-        Form {
-            Text(menu.mcdonaldsMenu[itemIndex].name)
+        NavigationView {
+            Form {
+                Image(menu.mcdonaldsMenu[itemIndex].imageName)
+                    .resizable()
+                    .scaledToFill()
+                
+                Stepper(value: $quantity, in: 1...10) {
+                    
+                    Text("Quantity: \(quantity)")
+                }
+                
+                Text(menu.mcdonaldsMenu[itemIndex].name)
 
+            }.navigationBarTitle(menu.mcdonaldsMenu[itemIndex].name, displayMode: .inline)
         }
     }
 }
