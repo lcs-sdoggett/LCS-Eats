@@ -12,9 +12,7 @@ struct ItemCustomization: View {
     @Binding var showingItemCustomization: Bool
     
     @State var menu = Menu()
-    
-    @State var quantity = 1
-    
+        
     var body: some View {
         NavigationView {
             
