@@ -18,6 +18,8 @@ struct MenuView: View {
     
     @State var menu = Menu()
     
+    @State private var itemIndex = 0
+    
     var body: some View {
         
         let restaurantChoice = store.orders[store.orders.count-1].restaurant
@@ -35,14 +37,14 @@ struct MenuView: View {
                         Spacer()
                         
                         Button(action: {
-                            
+                            itemIndex = item
                             showingItemCustomization = true
                         }) {
                             Image(systemName: "arrow.forward.circle")
                         }
                     }
                 }.sheet(isPresented: $showingItemCustomization) {
-                    ItemCustomization(showingItemCustomization: $showingItemCustomization, itemIndex: 0)
+                    ItemCustomization(showingItemCustomization: $showingItemCustomization, itemIndex: itemIndex)
                 }
             }
         } else if restaurantChoice.rawValue == "Tim Hortons" {
