@@ -26,23 +26,22 @@ struct MenuView: View {
         
         if restaurantChoice.rawValue == "Mcdonalds" {
             Form {
-                List(0..<menu.mcdonaldsMenu.count) { item in
-                    HStack {
-                        Image(menu.mcdonaldsMenu[item].imageName)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 70, height: 70, alignment: .center)
-                        Text(menu.mcdonaldsMenu[item].name)
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            itemIndex = item
-                            showingItemCustomization = true
-                        }) {
-                            Image(systemName: "arrow.forward.circle")
+                    ForEach(menu.mcdonaldsMenu, id: \.id) { item in
+                        HStack {
+                            Image(item.imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 70, height: 70, alignment: .center)
+                            Text(item.name)
+                            
+                            Spacer()
+                            
+                            Button(action: {
+                                showingItemCustomization = true
+                            }) {
+                                Image(systemName: "arrow.forward.circle")
+                            }
                         }
-                    }
                 }.sheet(isPresented: $showingItemCustomization) {
                     ItemCustomization(showingItemCustomization: $showingItemCustomization, itemIndex: itemIndex)
                 }
