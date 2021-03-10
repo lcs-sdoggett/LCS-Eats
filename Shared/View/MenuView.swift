@@ -29,19 +29,15 @@ struct MenuView: View {
             Form {
                 ForEach(menu.mcdonaldsMenu, id: \.id) { item in
                     NavigationLink(destination:(ItemCustomization(showingItemCustomization: $showingItemCustomization, item: item))) {
-                        
                         HStack {
                             Image(item.imageName)
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 70, height: 70, alignment: .center)
                             Text(item.name)
-                            
-                            Spacer()
-                            
                         }
                     }
-                }.navigationTitle("Mcdonalds")
+                }.navigationTitle("Mcdonalds Menu")
             }
         } else if restaurantChoice.rawValue == "Tim Hortons" {
             Form {

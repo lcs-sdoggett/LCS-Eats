@@ -14,10 +14,16 @@ struct ItemCustomization: View {
     @State var menu = Menu()
     
     var item: Item
-        
+    
     var body: some View {
-        NavigationView {
-            Text(item.name)
+        VStack {
+            Image(item.imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 200, height: 200)
+            Form {
+                Text(item.name)
+            }.navigationBarTitle(item.name, displayMode: .inline)
         }
     }
 }
