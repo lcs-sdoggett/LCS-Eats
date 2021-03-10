@@ -11,9 +11,13 @@ struct ItemCustomization: View {
     
     @Binding var showingItemCustomization: Bool
     
-    @State private var size = Size.medium
-    
     @State var menu = Menu()
+    
+    // These variables are used to customize the item
+    @State private var size = Size.medium
+    @State private var customization = ""
+    @State private var quantity = 1
+    
     
     var item: Item
     
@@ -24,17 +28,32 @@ struct ItemCustomization: View {
                 .scaledToFill()
                 .frame(width: 200, height: 200)
             Form {
-                Text(item.name)
                 
-                if item.name == "Coke" {
-                    Picker("Size", selection: $size) {
-                        Text(Size.small.rawValue).tag(Size.small)
-                        Text(Size.medium.rawValue).tag(Size.medium)
-                        Text(Size.large.rawValue).tag(Size.large)
+                Section {
+                    Text("Quantity:")
+                    Stepper(value: $quantity, in: 1...10) {
+                        Text("Number of item: \(quantity)")
                     }
-                    .pickerStyle(SegmentedPickerStyle())
                 }
                 
+                if item.name == "Coke" {
+                    Section {
+                        Text("Size:")
+                        Picker("Size", selection: $size) {
+                            Text(Size.small.rawValue).tag(Size.small)
+                            Text(Size.medium.rawValue).tag(Size.medium)
+                            Text(Size.large.rawValue).tag(Size.large)
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                    }
+                }
+                
+                if item.name != "Coke" {
+                    Section {
+                        Text("Additional Changes:")
+                        TextField("Customizations", text: $customization)
+                    }
+                }
             }.navigationBarTitle(item.name, displayMode: .inline)
         }
     }

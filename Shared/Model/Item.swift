@@ -13,8 +13,10 @@ struct Item: Identifiable {
     let name: String
     let price: Double
     let imageName: String
-    var quantity = 1
     
+    //Custom changes to item. Lazy variables will only effect some items
+    var quantity = 1
+    var customization = ""
     lazy var size = Size.medium
 }
 
