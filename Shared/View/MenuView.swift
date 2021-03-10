@@ -43,7 +43,8 @@ struct MenuView: View {
                             Image(systemName: "arrow.forward.circle")
                         }
                     }
-                }.sheet(isPresented: $showingItemCustomization) {
+                }.navigationTitle("Mcdonalds")
+                .sheet(isPresented: $showingItemCustomization) {
                     ItemCustomization(showingItemCustomization: $showingItemCustomization)
                 }
             }
