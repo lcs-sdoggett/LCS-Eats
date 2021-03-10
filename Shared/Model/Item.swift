@@ -14,6 +14,15 @@ struct Item: Identifiable {
     let price: Double
     let imageName: String
     var quantity = 1
+    
+    lazy var size = Size.medium
 }
+
+enum Size: String {
+    case small = "Small"
+    case medium = "Medium"
+    case large = "Large"
+}
+
 
 var testItem = Item(name: "Burger", price: 4.00, imageName: "MDbigmac")

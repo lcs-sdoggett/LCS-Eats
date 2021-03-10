@@ -11,6 +11,8 @@ struct ItemCustomization: View {
     
     @Binding var showingItemCustomization: Bool
     
+    @State private var size = Size.medium
+    
     @State var menu = Menu()
     
     var item: Item
@@ -23,6 +25,16 @@ struct ItemCustomization: View {
                 .frame(width: 200, height: 200)
             Form {
                 Text(item.name)
+                
+                if item.name == "Coke" {
+                    Picker("Size", selection: $size) {
+                        Text(Size.small.rawValue).tag(Size.small)
+                        Text(Size.medium.rawValue).tag(Size.medium)
+                        Text(Size.large.rawValue).tag(Size.large)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                
             }.navigationBarTitle(item.name, displayMode: .inline)
         }
     }
