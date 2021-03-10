@@ -10,12 +10,12 @@ import SwiftUI
 struct MenuView: View {
     
     @State private var showingItemCustomization = false
-    
+        
     @ObservedObject var store: OrderStore
     
     @State var menu = Menu()
     
-    @State private var itemIndex = 2
+    @State var itemChoice = testItem
     
     @State var restaurantChoice: Restaurant
     
@@ -24,7 +24,7 @@ struct MenuView: View {
     @State var orderphoneNumberOrEmail: String
     
     var body: some View {
-        
+                
         if restaurantChoice.rawValue == "Mcdonalds" {
             Form {
                 ForEach(menu.mcdonaldsMenu, id: \.id) { item in
@@ -38,6 +38,7 @@ struct MenuView: View {
                         Spacer()
                         
                         Button(action: {
+                            itemChoice = item
                             showingItemCustomization = true
                         }) {
                             Image(systemName: "arrow.forward.circle")
@@ -45,7 +46,7 @@ struct MenuView: View {
                     }
                 }.navigationTitle("Mcdonalds")
                 .sheet(isPresented: $showingItemCustomization) {
-                    ItemCustomization(showingItemCustomization: $showingItemCustomization)
+                    ItemCustomization(showingItemCustomization: $showingItemCustomization, item: itemChoice)
                 }
             }
         } else if restaurantChoice.rawValue == "Tim Hortons" {

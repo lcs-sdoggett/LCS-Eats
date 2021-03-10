@@ -13,7 +13,7 @@ struct CreateOrderView: View {
     
     @State private var restaurant = Restaurant.mcdonalds
     
-    var menu = Menu()
+    @State var menu = Menu()
     
     @ObservedObject var store: OrderStore
     
@@ -56,19 +56,12 @@ struct CreateOrderView: View {
         }.navigationTitle("Order")
         
     }
-    
-    func saveFirstScreen() {
-        showingMenu = true
-        
-        store.orders.append(Order(name: name, phoneOrEmail: phoneNumberOrEmail, restaurant: restaurant))
-        
-    }
 }
 
 struct CreateOrderView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CreateOrderView(menu: testMenu, store: testStore)
+            CreateOrderView(store: testStore)
         }
     }
 }

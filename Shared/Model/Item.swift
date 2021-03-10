@@ -15,3 +15,5 @@ struct Item: Identifiable {
     let imageName: String
     var quantity = 1
 }
+
+var testItem = Item(name: "Burger", price: 4.00, imageName: "MDbigmac")

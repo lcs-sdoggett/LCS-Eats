@@ -12,15 +12,13 @@ struct LCS_EatsApp: App {
     
     @StateObject private var store = OrderStore(orders: testData)
     
-    @StateObject private var menu = Menu()
-    
     var body: some Scene {
         WindowGroup {
             
             TabView{
                 
                 NavigationView {
-                    CreateOrderView(menu: menu, store: store)
+                    CreateOrderView(store: store)
                 }
                 .tabItem {
                     Image(systemName: "car.2")
