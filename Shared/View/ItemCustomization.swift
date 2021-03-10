@@ -13,7 +13,7 @@ struct ItemCustomization: View {
     
     @State var menu = Menu()
     
-    @State var item: Item
+    var item: Item
         
     var body: some View {
         NavigationView {
