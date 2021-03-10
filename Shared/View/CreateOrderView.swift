@@ -21,7 +21,7 @@ struct CreateOrderView: View {
     @State private var phoneNumberOrEmail = ""
     
     var body: some View {
-        ZStack{
+        VStack{
             Form {
                 
                 Section {
@@ -46,17 +46,13 @@ struct CreateOrderView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
             }
-            
-            VStack {
-                Spacer()
-                NavigationLink(destination: MenuView(store: store, restaurantChoice: restaurant), label : {
-                    Text("Next")
-                        .bold()
-                        .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 60)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                })
-            }
+            NavigationLink(destination: MenuView(store: store, restaurantChoice: restaurant, orderName: name, orderphoneNumberOrEmail: phoneNumberOrEmail), label : {
+                Text("Next")
+                    .bold()
+                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 60)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+            })
         }.navigationTitle("Order")
         
     }

@@ -19,6 +19,10 @@ struct MenuView: View {
     
     @State var restaurantChoice: Restaurant
     
+    @State var orderName: String
+    
+    @State var orderphoneNumberOrEmail: String
+    
     var body: some View {
         
         if restaurantChoice.rawValue == "Mcdonalds" {
@@ -68,7 +72,7 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            MenuView(store: testStore, menu: testMenu, restaurantChoice: Restaurant.mcdonalds)
+            MenuView(store: testStore, menu: testMenu, restaurantChoice: Restaurant.mcdonalds, orderName: "Scott", orderphoneNumberOrEmail: "555555555")
             
         }
     }
