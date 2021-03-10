@@ -9,9 +9,6 @@ import SwiftUI
 
 struct MenuView: View {
     
-    // Weather to show this view
-    @Binding var showingMenu: Bool
-    
     @State private var showingItemCustomization = false
     
     @ObservedObject var store: OrderStore
@@ -20,9 +17,9 @@ struct MenuView: View {
     
     @State private var itemIndex = 2
     
+    @State var restaurantChoice: Restaurant
+    
     var body: some View {
-        
-        let restaurantChoice = store.orders[store.orders.count-1].restaurant
         
         if restaurantChoice.rawValue == "Mcdonalds" {
             Form {
@@ -71,7 +68,7 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            MenuView(showingMenu: .constant(true), store: testStore, menu: testMenu)
+            MenuView(store: testStore, menu: testMenu, restaurantChoice: Restaurant.mcdonalds)
             
         }
     }

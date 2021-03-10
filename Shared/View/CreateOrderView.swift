@@ -21,42 +21,43 @@ struct CreateOrderView: View {
     @State private var phoneNumberOrEmail = ""
     
     var body: some View {
-        Form {
-            
-            Section {
-                Text("Name:")
+        ZStack{
+            Form {
                 
-                TextField("Name", text: $name)
-            }
-            
-            Section {
-                Text("Phone Number:")
-                
-                TextField("Phone Number/Email", text: $phoneNumberOrEmail)
-            }
-            
-            Section {
-                Text("Restaurant:")
-                Picker("Restaurant", selection: $restaurant) {
-                    Text(Restaurant.mcdonalds.rawValue).tag(Restaurant.mcdonalds)
-                    Text(Restaurant.timHortons.rawValue).tag(Restaurant.timHortons)
-                    Text(Restaurant.pizzaHut.rawValue).tag(Restaurant.pizzaHut)
+                Section {
+                    Text("Name:")
+                    
+                    TextField("Name", text: $name)
                 }
-                .pickerStyle(SegmentedPickerStyle())
+                
+                Section {
+                    Text("Phone Number:")
+                    
+                    TextField("Phone Number/Email", text: $phoneNumberOrEmail)
+                }
+                
+                Section {
+                    Text("Restaurant:")
+                    Picker("Restaurant", selection: $restaurant) {
+                        Text(Restaurant.mcdonalds.rawValue).tag(Restaurant.mcdonalds)
+                        Text(Restaurant.timHortons.rawValue).tag(Restaurant.timHortons)
+                        Text(Restaurant.pizzaHut.rawValue).tag(Restaurant.pizzaHut)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
             }
             
-            Button("Next") {
-                self.saveFirstScreen()
+            VStack {
+                Spacer()
+                NavigationLink(destination: MenuView(store: store, restaurantChoice: restaurant), label : {
+                    Text("Next")
+                        .bold()
+                        .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 60)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                })
             }
-            .frame(minWidth: 0, maxWidth: .infinity)
-            .padding()
-            .foregroundColor(.white)
-            .background(Color.accentColor)
-            
         }.navigationTitle("Order")
-        .sheet(isPresented: $showingMenu) {
-            MenuView(showingMenu: $showingMenu, store: store, menu: menu)
-        }
         
     }
     
