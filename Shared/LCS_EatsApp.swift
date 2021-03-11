@@ -11,7 +11,7 @@ import SwiftUI
 struct LCS_EatsApp: App {
     
     @StateObject private var store = OrderStore()
-    
+        
     var body: some Scene {
         WindowGroup {
             

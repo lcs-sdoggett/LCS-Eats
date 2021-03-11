@@ -11,7 +11,9 @@ struct MenuView: View {
         
     @ObservedObject var store: OrderStore
     
-    @State var menu = Menu()
+    @State private var menu = Menu()
+    
+    @State private var cart: [Item] = []
         
     @Binding var restaurantChoice: Restaurant
     
@@ -34,14 +36,20 @@ struct MenuView: View {
                         Spacer()
                         
                         Button(action: {
-                            //store.orders[0].items.append(item)
-                            print(orderName)
-                            print(orderphoneNumberOrEmail)
+                            cart.append(item)
                         }) {
                             Image(systemName: "plus.circle")
                         }
                     }
                 }.navigationTitle("Mcdonalds Menu")
+            }.toolbar {
+                Button(action: {
+                    for item in cart {
+                        print(item.name)
+                    }
+                }) {
+                    Image(systemName: "cart")
+                }
             }
         } else if restaurantChoice.rawValue == "Tim Hortons" {
             Form {
@@ -68,7 +76,7 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            MenuView(store: testStore, menu: testMenu, restaurantChoice: .constant(Restaurant.mcdonalds), orderName: .constant("Scott"), orderphoneNumberOrEmail: .constant("555555555"))
+            MenuView(store: testStore, restaurantChoice: .constant(Restaurant.mcdonalds), orderName: .constant("Scott"), orderphoneNumberOrEmail: .constant("555555555"))
             
         }
     }
