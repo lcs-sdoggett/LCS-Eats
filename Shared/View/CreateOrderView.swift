@@ -46,7 +46,7 @@ struct CreateOrderView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
             }
-            NavigationLink(destination: MenuView(store: store, restaurantChoice: restaurant, orderName: name, orderphoneNumberOrEmail: phoneNumberOrEmail), label : {
+            NavigationLink(destination: MenuView(store: store, restaurantChoice: $restaurant, orderName: $name, orderphoneNumberOrEmail: $phoneNumberOrEmail), label : {
                 Text("Next")
                     .bold()
                     .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 60)

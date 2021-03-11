@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct LCS_EatsApp: App {
     
-    @StateObject private var store = OrderStore(orders: testData)
+    @StateObject private var store = OrderStore()
     
     var body: some Scene {
         WindowGroup {

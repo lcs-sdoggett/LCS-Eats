@@ -8,20 +8,16 @@
 import SwiftUI
 
 struct MenuView: View {
-    
-    @State private var showingItemCustomization = false
-    
+        
     @ObservedObject var store: OrderStore
     
     @State var menu = Menu()
+        
+    @Binding var restaurantChoice: Restaurant
     
-    @State var itemChoice = testItem
+    @Binding var orderName: String
     
-    @State var restaurantChoice: Restaurant
-    
-    @State var orderName: String
-    
-    @State var orderphoneNumberOrEmail: String
+    @Binding var orderphoneNumberOrEmail: String
     
     var body: some View {
         
@@ -34,6 +30,16 @@ struct MenuView: View {
                             .scaledToFill()
                             .frame(width: 70, height: 70, alignment: .center)
                         Text(item.name)
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            //store.orders[0].items.append(item)
+                            print(orderName)
+                            print(orderphoneNumberOrEmail)
+                        }) {
+                            Image(systemName: "plus.circle")
+                        }
                     }
                 }.navigationTitle("Mcdonalds Menu")
             }
@@ -62,7 +68,7 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            MenuView(store: testStore, menu: testMenu, restaurantChoice: Restaurant.mcdonalds, orderName: "Scott", orderphoneNumberOrEmail: "555555555")
+            MenuView(store: testStore, menu: testMenu, restaurantChoice: .constant(Restaurant.mcdonalds), orderName: .constant("Scott"), orderphoneNumberOrEmail: .constant("555555555"))
             
         }
     }
