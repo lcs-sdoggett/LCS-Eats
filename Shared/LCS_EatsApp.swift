@@ -27,6 +27,14 @@ struct LCS_EatsApp: App {
                 }
                 
                 NavigationView {
+                    CartView(store: store, cart: cart)
+                }
+                .tabItem {
+                    Image(systemName: "cart")
+                    Text("Cart")
+                }
+                
+                NavigationView {
                     InfoView()
                 }
                 .tabItem {
