@@ -17,11 +17,10 @@ struct CartView: View {
         
         if cart.items.isEmpty {
             Text("Cart is empty")
+                .font(.title)
+                .foregroundColor(Color.gray)
                 .navigationTitle("Cart")
-        }
-        
-        else {
-            
+        } else {
             List {
                 ForEach(cart.items) { item in
                     HStack {
@@ -35,6 +34,14 @@ struct CartView: View {
                             Text("$" + String(item.price))
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
+                        }
+                        Spacer()
+                        
+                        Button(action: {
+                            // Find index of item and remove it from cart.item
+                            print("item removed")
+                        }) {
+                            Image(systemName: "minus.circle")
                         }
                     }
                 }
