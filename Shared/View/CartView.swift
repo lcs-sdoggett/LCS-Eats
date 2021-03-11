@@ -14,21 +14,32 @@ struct CartView: View {
     @ObservedObject var cart: CartStore
     
     var body: some View {
-        List {
-            ForEach(cart.items) { item in
-                HStack {
-                    Image(item.imageName)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 70, height: 70, alignment: .center)
-                    VStack {
-                        Text(item.name)
-                        Text("\(item.price)")
+        
+        if cart.items.isEmpty {
+            Text("Cart is empty")
+                .navigationTitle("Cart")
+        }
+        
+        else {
+            
+            List {
+                ForEach(cart.items) { item in
+                    HStack {
+                        Image(item.imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 70, height: 70, alignment: .center)
+                        
+                        VStack(alignment: .leading) {
+                            Text(item.name)
+                            Text("$" + String(item.price))
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
                     }
                 }
-            }
-            
-        }.navigationTitle("Cart")
+            }.navigationTitle("Cart")
+        }
     }
 }
 

@@ -148,8 +148,8 @@
 				7D36A47E25C36C2E008B2E03 /* CreateOrderView.swift */,
 				7D5E46D925C3A34100AC8811 /* MenuView.swift */,
 				7D52337025C4A1AF007E0277 /* InfoView.swift */,
-				7DCE5CB225C320B70077BB16 /* OrderReview.swift */,
 				7DFCB54425FA7FFA004F545B /* CartView.swift */,
+				7DCE5CB225C320B70077BB16 /* OrderReview.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
