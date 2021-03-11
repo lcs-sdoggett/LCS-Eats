@@ -17,6 +17,8 @@ struct CreateOrderView: View {
     
     @ObservedObject var store: OrderStore
     
+    @ObservedObject var cart: CartStore
+    
     @State private var name = ""
     @State private var phoneNumberOrEmail = ""
     
@@ -46,7 +48,7 @@ struct CreateOrderView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
             }
-            NavigationLink(destination: MenuView(store: store, restaurantChoice: $restaurant, orderName: $name, orderphoneNumberOrEmail: $phoneNumberOrEmail), label : {
+            NavigationLink(destination: MenuView(store: store, cart: cart, restaurantChoice: $restaurant, orderName: $name, orderphoneNumberOrEmail: $phoneNumberOrEmail), label : {
                 Text("Next")
                     .bold()
                     .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 60)
@@ -61,7 +63,7 @@ struct CreateOrderView: View {
 struct CreateOrderView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CreateOrderView(store: testStore)
+            CreateOrderView(store: testStore, cart: testCartStore)
         }
     }
 }

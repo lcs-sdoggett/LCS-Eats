@@ -11,9 +11,9 @@ struct MenuView: View {
         
     @ObservedObject var store: OrderStore
     
-    @State private var menu = Menu()
+    @ObservedObject var cart: CartStore
     
-    @State private var cart: [Item] = []
+    @State private var menu = Menu()
         
     @Binding var restaurantChoice: Restaurant
     
@@ -36,7 +36,7 @@ struct MenuView: View {
                         Spacer()
                         
                         Button(action: {
-                            cart.append(item)
+                            cart.items.append(item)
                         }) {
                             Image(systemName: "plus.circle")
                         }
@@ -44,7 +44,7 @@ struct MenuView: View {
                 }.navigationTitle("Mcdonalds Menu")
             }.toolbar {
                 Button(action: {
-                    for item in cart {
+                    for item in cart.items {
                         print(item.name)
                     }
                 }) {
@@ -76,7 +76,7 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            MenuView(store: testStore, restaurantChoice: .constant(Restaurant.mcdonalds), orderName: .constant("Scott"), orderphoneNumberOrEmail: .constant("555555555"))
+            MenuView(store: testStore, cart: testCartStore, restaurantChoice: .constant(Restaurant.mcdonalds), orderName: .constant("Scott"), orderphoneNumberOrEmail: .constant("555555555"))
             
         }
     }

@@ -11,6 +11,7 @@ import SwiftUI
 struct LCS_EatsApp: App {
     
     @StateObject private var store = OrderStore()
+    @StateObject private var cart = CartStore()
         
     var body: some Scene {
         WindowGroup {
@@ -18,7 +19,7 @@ struct LCS_EatsApp: App {
             TabView{
                 
                 NavigationView {
-                    CreateOrderView(store: store)
+                    CreateOrderView(store: store, cart: cart)
                 }
                 .tabItem {
                     Image(systemName: "car.2")
