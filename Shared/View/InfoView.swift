@@ -13,7 +13,7 @@ struct InfoView: View {
     
     var body: some View {
         
-        List(info, id: \.text) { info in
+        List(info, id: \.text, children: \.children) { info in
 
             // If there are children on this tip
             if info.children != nil {
@@ -22,7 +22,7 @@ struct InfoView: View {
                 Text(info.text)
             }
 
-        }
+        }.navigationTitle("Info")
         
     }
     
