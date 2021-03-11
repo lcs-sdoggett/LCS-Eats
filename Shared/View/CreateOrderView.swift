@@ -9,33 +9,36 @@ import SwiftUI
 
 struct CreateOrderView: View {
     
-    @State private var showingMenu = false
+    // Created instance of menu
+    @State private var menu = Menu()
     
-    @State private var restaurant = Restaurant.mcdonalds
-    
-    @State var menu = Menu()
-    
+    // Store
     @ObservedObject var store: OrderStore
     
+    // User inputed values
     @State private var name = ""
     @State private var phoneNumberOrEmail = ""
+    @State private var restaurant = Restaurant.mcdonalds
     
     var body: some View {
         VStack{
             Form {
                 
+                // User inputs name
                 Section {
                     Text("Name:")
                     
                     TextField("Name", text: $name)
                 }
                 
+                // User inputs phone number or email
                 Section {
                     Text("Phone Number:")
                     
                     TextField("Phone Number/Email", text: $phoneNumberOrEmail)
                 }
                 
+                // User choses restaraunt
                 Section {
                     Text("Restaurant:")
                     Picker("Restaurant", selection: $restaurant) {
@@ -46,7 +49,9 @@ struct CreateOrderView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
             }
-            NavigationLink(destination: MenuView(store: store, restaurantChoice: restaurant, orderName: name, orderphoneNumberOrEmail: phoneNumberOrEmail), label : {
+            
+            // Navigation link brings user to the menu view
+            NavigationLink(destination: MenuView(store: store, orderName: name, orderphoneNumberOrEmail: phoneNumberOrEmail, restaurantChoice: restaurant), label : {
                 Text("Next")
                     .bold()
                     .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 60)

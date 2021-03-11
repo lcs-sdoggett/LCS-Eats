@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ItemCustomization: View {
     
-    @Binding var showingItemCustomization: Bool
-    
     @State var menu = Menu()
     
     // These variables are used to customize the item
@@ -23,12 +21,16 @@ struct ItemCustomization: View {
     
     var body: some View {
         VStack {
+            // Item image at top of screen
             Image(item.imageName)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 200, height: 200)
+            
+            // Form for customizations
             Form {
                 
+                // All items have a quatity
                 Section {
                     Text("Quantity:")
                     Stepper(value: $quantity, in: 1...10) {
@@ -36,6 +38,7 @@ struct ItemCustomization: View {
                     }
                 }
                 
+                // Only Coke has size customization
                 if item.name == "Coke" {
                     Section {
                         Text("Size:")
@@ -48,6 +51,7 @@ struct ItemCustomization: View {
                     }
                 }
                 
+                // All items except Coke have size customization
                 if item.name != "Coke" {
                     Section {
                         Text("Additional Changes:")
@@ -62,7 +66,7 @@ struct ItemCustomization: View {
 struct ItemCustomization_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ItemCustomization(showingItemCustomization: .constant(true), item: testItem)
+            ItemCustomization(item: testItem)
         }
     }
 }

@@ -9,26 +9,25 @@ import SwiftUI
 
 struct MenuView: View {
     
-    @State private var showingItemCustomization = false
-    
+    // Store
     @ObservedObject var store: OrderStore
     
-    @State var menu = Menu()
+    // Created instance of menu
+    @State private var menu = Menu()
     
-    @State var itemChoice = testItem
-    
-    @State var restaurantChoice: Restaurant
-    
+    // User inputed values
     @State var orderName: String
-    
     @State var orderphoneNumberOrEmail: String
+    @State var restaurantChoice: Restaurant
     
     var body: some View {
         
         if restaurantChoice.rawValue == "Mcdonalds" {
             Form {
+                // Iterates over mcdonalds menu
                 ForEach(menu.mcdonaldsMenu, id: \.id) { item in
-                    NavigationLink(destination:(ItemCustomization(showingItemCustomization: $showingItemCustomization, item: item))) {
+                    // Creates navigation link to ItemCustomization view and passes in the item
+                    NavigationLink(destination:(ItemCustomization(item: item))) {
                         HStack {
                             Image(item.imageName)
                                 .resizable()
@@ -64,7 +63,7 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            MenuView(store: testStore, menu: testMenu, restaurantChoice: Restaurant.mcdonalds, orderName: "Scott", orderphoneNumberOrEmail: "555555555")
+            MenuView(store: testStore, orderName: "", orderphoneNumberOrEmail: "", restaurantChoice: Restaurant.mcdonalds)
             
         }
     }
