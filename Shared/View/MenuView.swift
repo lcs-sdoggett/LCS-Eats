@@ -13,17 +13,13 @@ struct MenuView: View {
     
     @ObservedObject var cart: CartStore
     
+    @EnvironmentObject var order: Order
+    
     @State private var menu = Menu()
-        
-    @Binding var restaurantChoice: Restaurant
-    
-    @Binding var orderName: String
-    
-    @Binding var orderphoneNumberOrEmail: String
     
     var body: some View {
         
-        if restaurantChoice.rawValue == "Mcdonalds" {
+        if order.restaurant.rawValue == "Mcdonalds" {
             Form {
                 ForEach(menu.mcdonaldsMenu, id: \.id) { item in
                     HStack {
@@ -51,7 +47,7 @@ struct MenuView: View {
                     Image(systemName: "cart")
                 }
             }
-        } else if restaurantChoice.rawValue == "Tim Hortons" {
+        } else if order.restaurant.rawValue == "Tim Hortons" {
             Form {
                 ForEach(0..<menu.timsmenu.count) { item in
                     Toggle(isOn: $menu.timsmenu[item].itemChosen) {
@@ -65,7 +61,7 @@ struct MenuView: View {
                     }
                 }
             }
-        } else if restaurantChoice.rawValue == "Pizza Hut" {
+        } else if order.restaurant.rawValue == "Pizza Hut" {
             Form {
                 
             }
@@ -76,7 +72,7 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            MenuView(store: testStore, cart: testCartStore, restaurantChoice: .constant(Restaurant.mcdonalds), orderName: .constant("Scott"), orderphoneNumberOrEmail: .constant("555555555"))
+            MenuView(store: testStore, cart: testCartStore)
             
         }
     }

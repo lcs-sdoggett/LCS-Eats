@@ -10,8 +10,9 @@ import SwiftUI
 @main
 struct LCS_EatsApp: App {
     
-    @StateObject private var store = OrderStore()
-    @StateObject private var cart = CartStore()
+    @StateObject var order = Order(name: "", phoneNumberOrEmail: "", restaurant: .mcdonalds, items: [])
+    @StateObject var store = OrderStore()
+    @StateObject var cart = CartStore()
         
     var body: some Scene {
         WindowGroup {
@@ -20,6 +21,7 @@ struct LCS_EatsApp: App {
                 
                 NavigationView {
                     CreateOrderView(store: store, cart: cart)
+                        .environmentObject(order)
                 }
                 .tabItem {
                     Image(systemName: "car.2")
@@ -28,6 +30,7 @@ struct LCS_EatsApp: App {
                 
                 NavigationView {
                     CartView(store: store, cart: cart)
+                        .environmentObject(order)
                 }
                 .tabItem {
                     Image(systemName: "cart")

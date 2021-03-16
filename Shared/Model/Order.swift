@@ -12,13 +12,13 @@ class Order: ObservableObject, Identifiable {
     
     var id = UUID()
     var name: String
-    var phoneOrEmail: String
+    var phoneNumberOrEmail: String
     var restaurant: Restaurant
     var items: [Item]
     
-    internal init(name: String, phoneOrEmail: String, restaurant: Restaurant, items: [Item]) {
+    internal init(name: String, phoneNumberOrEmail: String, restaurant: Restaurant, items: [Item]) {
         self.name = name
-        self.phoneOrEmail = phoneOrEmail
+        self.phoneNumberOrEmail = phoneNumberOrEmail
         self.restaurant = restaurant
         self.items = items
     }
@@ -26,4 +26,4 @@ class Order: ObservableObject, Identifiable {
         
 }
 
-let testData = [Order(name: "scott", phoneOrEmail: "9057853261", restaurant: .mcdonalds, items: [testItem])]
+let testData = [Order(name: "scott", phoneNumberOrEmail: "9057853261", restaurant: .mcdonalds, items: [testItem])]

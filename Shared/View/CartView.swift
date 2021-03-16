@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CartView: View {
     
+    @EnvironmentObject var order: Order
+    
     @ObservedObject var store: OrderStore
     
     @ObservedObject var cart: CartStore
@@ -21,30 +23,44 @@ struct CartView: View {
                 .foregroundColor(Color.gray)
                 .navigationTitle("Cart")
         } else {
-            List {
-                ForEach(cart.items) { item in
-                    HStack {
-                        Image(item.imageName)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 70, height: 70, alignment: .center)
-                        
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                            Text("$" + String(item.price))
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                        }
-                        Spacer()
-                        
-                        Button(action: {
-                            // Find index of item and remove it from cart.item
-                            print("item removed")
-                        }) {
-                            Image(systemName: "minus.circle")
+            VStack{
+                List {
+                    ForEach(cart.items) { item in
+                        HStack {
+                            Image(item.imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 70, height: 70, alignment: .center)
+                            
+                            VStack(alignment: .leading) {
+                                Text(item.name)
+                                Text("$" + String(item.price))
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                            }
+                            Spacer()
+                            
+                            Button(action: {
+//                                if let index = cart.items.firstIndex(of: item) {
+//                                    cart.items.remove(at: index)
+//                                }
+                            }) {
+                                Image(systemName: "minus.circle")
+                            }
                         }
                     }
                 }
+                
+                Spacer()
+                
+                NavigationLink(destination: OrderReview(store: store, cart: cart), label : {
+                    Text("Review Order")
+                        .bold()
+                        .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 60)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                })
+                
             }.navigationTitle("Cart")
         }
     }
