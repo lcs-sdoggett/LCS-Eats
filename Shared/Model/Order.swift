@@ -11,10 +11,10 @@ import Combine
 class Order: ObservableObject, Identifiable {
     
     var id = UUID()
-    var name: String
-    var phoneNumberOrEmail: String
-    var restaurant: Restaurant
-    var items: [Item]
+    @Published var name: String
+    @Published var phoneNumberOrEmail: String
+    @Published var restaurant: Restaurant
+    @Published var items: [Item]
     
     internal init(name: String, phoneNumberOrEmail: String, restaurant: Restaurant, items: [Item]) {
         self.name = name

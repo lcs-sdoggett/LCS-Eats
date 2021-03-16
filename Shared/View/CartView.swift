@@ -17,7 +17,7 @@ struct CartView: View {
     
     var body: some View {
         
-        if cart.items.isEmpty {
+        if order.items.isEmpty {
             Text("Cart is empty")
                 .font(.title)
                 .foregroundColor(Color.gray)
@@ -25,7 +25,7 @@ struct CartView: View {
         } else {
             VStack{
                 List {
-                    ForEach(cart.items) { item in
+                    ForEach(order.items) { item in
                         HStack {
                             Image(item.imageName)
                                 .resizable()

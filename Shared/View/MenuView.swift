@@ -32,7 +32,7 @@ struct MenuView: View {
                         Spacer()
                         
                         Button(action: {
-                            cart.items.append(item)
+                            order.items.append(item)
                         }) {
                             Image(systemName: "plus.circle")
                         }
@@ -40,7 +40,7 @@ struct MenuView: View {
                 }.navigationTitle("Mcdonalds Menu")
             }.toolbar {
                 Button(action: {
-                    for item in cart.items {
+                    for item in order.items {
                         print(item.name)
                     }
                 }) {
