@@ -7,24 +7,12 @@
 
 import Foundation
 
-struct Item: Identifiable {
+struct Item: Identifiable, Equatable {
     let id = UUID()
     var itemChosen = false
     let name: String
     let price: Double
     let imageName: String
-    
-    //Custom changes to item. Lazy variables will only effect some items
-    var quantity = 1
-    var customization = ""
-    lazy var size = Size.medium
 }
-
-enum Size: String {
-    case small = "Small"
-    case medium = "Medium"
-    case large = "Large"
-}
-
 
 var testItem = Item(name: "Burger", price: 4.00, imageName: "MDbigmac")

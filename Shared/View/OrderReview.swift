@@ -19,7 +19,7 @@ struct OrderReview: View {
         VStack {
             // Name text
             HStack {
-                Text("Name: Scott D")
+                Text("Name: Scott")
                     .padding(.leading)
                 Spacer()
             }

@@ -24,7 +24,7 @@ struct CartView: View {
                 .navigationTitle("Cart")
         } else {
             VStack{
-                List {
+                Form {
                     ForEach(order.items) { item in
                         HStack {
                             Image(item.imageName)
@@ -41,9 +41,9 @@ struct CartView: View {
                             Spacer()
                             
                             Button(action: {
-//                                if let index = cart.items.firstIndex(of: item) {
-//                                    cart.items.remove(at: index)
-//                                }
+                                if let index = order.items.firstIndex(of: item) {
+                                    order.items.remove(at: index)
+                                }
                             }) {
                                 Image(systemName: "minus.circle")
                             }
