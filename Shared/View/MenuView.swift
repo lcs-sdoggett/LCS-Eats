@@ -36,10 +36,6 @@ struct MenuView: View {
                         }
                     }
                 }.navigationTitle("Mcdonalds Menu")
-            }.toolbar {
-                NavigationLink(destination: CartView(store: store).environmentObject(order), label :{
-                    Image(systemName: "cart")
-                })
             }
         } else if order.restaurant.rawValue == "Tim Hortons" {
             Form {

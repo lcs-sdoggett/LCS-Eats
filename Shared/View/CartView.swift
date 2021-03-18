@@ -51,7 +51,7 @@ struct CartView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: OrderReview(store: store), label : {
+                NavigationLink(destination: OrderReview(store: store).environmentObject(order), label : {
                     Text("Review Order")
                         .bold()
                         .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 60)
