@@ -38,7 +38,6 @@ struct CreateOrderView: View {
                     Picker("Restaurant", selection: $order.restaurant) {
                         Text(Restaurant.mcdonalds.rawValue).tag(Restaurant.mcdonalds)
                         Text(Restaurant.timHortons.rawValue).tag(Restaurant.timHortons)
-                        Text(Restaurant.pizzaHut.rawValue).tag(Restaurant.pizzaHut)
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
