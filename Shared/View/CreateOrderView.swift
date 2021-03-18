@@ -16,9 +16,7 @@ struct CreateOrderView: View {
     @State var menu = Menu()
     
     @ObservedObject var store: OrderStore
-    
-    @ObservedObject var cart: CartStore
-    
+        
     var body: some View {
         VStack{
             Form {
@@ -45,7 +43,7 @@ struct CreateOrderView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
             }
-            NavigationLink(destination: MenuView(store: store, cart: cart).environmentObject(order), label : {
+            NavigationLink(destination: MenuView(store: store).environmentObject(order), label : {
                 Text("Next")
                     .bold()
                     .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 60)
@@ -60,7 +58,7 @@ struct CreateOrderView: View {
 struct CreateOrderView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CreateOrderView(store: testStore, cart: testCartStore)
+            CreateOrderView(store: testStore)
                 .environmentObject(Order(name: "", phoneNumberOrEmail: "", restaurant: Restaurant.mcdonalds, items: []))
         }
     }

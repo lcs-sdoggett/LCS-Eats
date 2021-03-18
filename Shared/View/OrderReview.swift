@@ -11,9 +11,7 @@ import SwiftUI
 struct OrderReview: View {
     
     @ObservedObject var store: OrderStore
-    
-    @ObservedObject var cart: CartStore
-    
+        
     var body: some View {
         
         VStack {
@@ -91,7 +89,7 @@ struct OrderReview: View {
 struct OrderReview_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            OrderReview(store: testStore, cart: testCartStore)
+            OrderReview(store: testStore)
         }
     }
 }

@@ -12,7 +12,6 @@ struct LCS_EatsApp: App {
     
     @StateObject var order = Order(name: "", phoneNumberOrEmail: "", restaurant: .mcdonalds, items: [])
     @StateObject var store = OrderStore()
-    @StateObject var cart = CartStore()
         
     var body: some Scene {
         WindowGroup {
@@ -20,7 +19,7 @@ struct LCS_EatsApp: App {
             TabView{
                 
                 NavigationView {
-                    CreateOrderView(store: store, cart: cart)
+                    CreateOrderView(store: store)
                         .environmentObject(order)
                 }
                 .tabItem {
@@ -29,7 +28,7 @@ struct LCS_EatsApp: App {
                 }
                 
                 NavigationView {
-                    CartView(store: store, cart: cart)
+                    CartView(store: store)
                         .environmentObject(order)
                 }
                 .tabItem {

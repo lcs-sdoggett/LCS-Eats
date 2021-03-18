@@ -10,9 +10,7 @@ import SwiftUI
 struct MenuView: View {
         
     @ObservedObject var store: OrderStore
-    
-    @ObservedObject var cart: CartStore
-    
+        
     @EnvironmentObject var order: Order
     
     @State private var menu = Menu()
@@ -39,13 +37,9 @@ struct MenuView: View {
                     }
                 }.navigationTitle("Mcdonalds Menu")
             }.toolbar {
-                Button(action: {
-                    for item in order.items {
-                        print(item.name)
-                    }
-                }) {
+                NavigationLink(destination: CartView(store: store).environmentObject(order), label :{
                     Image(systemName: "cart")
-                }
+                })
             }
         } else if order.restaurant.rawValue == "Tim Hortons" {
             Form {
@@ -72,7 +66,7 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            MenuView(store: testStore, cart: testCartStore)
+            MenuView(store: testStore)
             
         }
     }

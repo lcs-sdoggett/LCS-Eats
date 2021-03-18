@@ -12,9 +12,7 @@ struct CartView: View {
     @EnvironmentObject var order: Order
     
     @ObservedObject var store: OrderStore
-    
-    @ObservedObject var cart: CartStore
-    
+        
     var body: some View {
         
         if order.items.isEmpty {
@@ -53,7 +51,7 @@ struct CartView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: OrderReview(store: store, cart: cart), label : {
+                NavigationLink(destination: OrderReview(store: store), label : {
                     Text("Review Order")
                         .bold()
                         .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 60)
@@ -69,7 +67,7 @@ struct CartView: View {
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CartView(store: testStore, cart: testCartStore)
+            CartView(store: testStore)
             
         }
     }
