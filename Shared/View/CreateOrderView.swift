@@ -10,11 +10,7 @@ import SwiftUI
 struct CreateOrderView: View {
     
     @EnvironmentObject var order: Order
-    
-    @State private var showingMenu = false
-    
-    @State var menu = Menu()
-    
+            
     @ObservedObject var store: OrderStore
         
     var body: some View {
@@ -48,8 +44,9 @@ struct CreateOrderView: View {
                     .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 60)
                     .background(Color.blue)
                     .foregroundColor(.white)
+                    .padding(.top, -10)
             })
-        }.navigationTitle("Order")
+        }.navigationTitle("Cart")
         
     }
 }
