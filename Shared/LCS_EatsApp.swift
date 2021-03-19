@@ -35,7 +35,7 @@ struct LCS_EatsApp: App {
                         }
                         
                         NavigationView {
-                            CartView(store: store)
+                            CheckoutView(store: store)
                                 .environmentObject(order)
                         }
                         .tabItem {

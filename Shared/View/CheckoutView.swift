@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CartView: View {
+struct CheckoutView: View {
     
     @EnvironmentObject var order: Order
     
@@ -23,6 +23,29 @@ struct CartView: View {
         } else {
             VStack{
                 Form {
+                    
+                    Section {
+                        Text("Name:")
+                        
+                        if order.name.isEmpty {
+                            Text("No name")
+                                .foregroundColor(.red)
+                        } else {
+                            Text("\(order.name)")
+                        }
+
+                    }
+                    Section {
+                        Text("Contact Info:")
+                        
+                        if order.phoneNumberOrEmail.isEmpty {
+                            Text("No contact info")
+                                .foregroundColor(.red)
+                        } else {
+                            Text("\(order.phoneNumberOrEmail)")
+                        }
+
+                    }
                     ForEach(order.items) { item in
                         HStack {
                             Image(item.imageName)
@@ -49,25 +72,15 @@ struct CartView: View {
                     }
                 }
                 
-                Spacer()
-                
-                NavigationLink(destination: OrderReview(store: store).environmentObject(order), label : {
-                    Text("Review Order")
-                        .bold()
-                        .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 60)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                })
-                
             }.navigationTitle("Cart")
         }
     }
 }
 
-struct CartView_Previews: PreviewProvider {
+struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CartView(store: testStore)
+            CheckoutView(store: testStore)
             
         }
     }
