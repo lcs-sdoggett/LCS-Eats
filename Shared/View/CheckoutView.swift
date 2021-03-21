@@ -82,6 +82,29 @@ struct CheckoutView: View {
                                 }
                             }
                         }
+                        
+                        Section {
+                            Text("Item Price:")
+                            Text(String(format: "$%.2f", order.itemPrice))
+                        }
+                        
+                        Section {
+                            Text("Tax:")
+                            Text(String(format: "$%.2f", order.tax))
+                        }
+                        
+                        Section {
+                            Text("Delivery:")
+                            Text(String(format: "$%.2f", order.delivery))
+                        }
+                        
+                        Section {
+                            Text("Total:")
+                            Text(String(format: "$%.2f", order.totalPrice))
+                        }
+                        
+                        Spacer()
+                        
                     }
                     
                 }.navigationTitle("Checkout")
@@ -92,7 +115,7 @@ struct CheckoutView: View {
                     Button(action: {
                         
                     }) {
-                        Text("Place Order")
+                        Text(String(format: "Place Order: $%.2f", order.totalPrice))
                             .bold()
                             .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 60)
                             .background(Color.blue)
