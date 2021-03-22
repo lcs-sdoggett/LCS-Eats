@@ -8,45 +8,41 @@
 import SwiftUI
 
 struct MenuView: View {
-        
+    
     @ObservedObject var store: OrderStore
-        
+    
     @EnvironmentObject var order: Order
     
     @State private var menu = Menu()
     
+    var itemList: [Item] {
+        if order.restaurant.rawValue == "Mcdonald's" {
+            return menu.mcdonaldsMenu
+        } else {
+            return menu.timsMenu
+        }
+    }
+    
     var body: some View {
-        
-        if order.restaurant.rawValue == "Mcdonalds" {
-            Form {
-                ForEach(menu.mcdonaldsMenu, id: \.id) { item in
-                    HStack {
-                        Image(item.imageName)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 70, height: 70, alignment: .center)
-                        Text(item.name)
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            order.items.append(item)
-                        }) {
-                            Image(systemName: "plus.circle")
-                        }
+        Form {
+            ForEach(itemList, id: \.id) { item in
+                HStack {
+                    Image(item.imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 70, height: 70, alignment: .center)
+                    Text(item.name)
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        order.items.append(item)
+                    }) {
+                        Image(systemName: "plus.circle")
                     }
-                }.navigationTitle("Mcdonalds Menu")
-            }
-        } else if order.restaurant.rawValue == "Tim Hortons" {
-            Form {
-                ForEach(0..<menu.timsmenu.count) { item in
                 }
             }
-        } else if order.restaurant.rawValue == "Pizza Hut" {
-            Form {
-                
-            }
-        }
+        }.navigationTitle("\(order.restaurant.rawValue) Menu")
     }
 }
 

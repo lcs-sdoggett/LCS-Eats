@@ -8,6 +8,6 @@
 import Foundation
 
 enum Restaurant: String {
-    case mcdonalds = "Mcdonalds"
-    case timHortons = "Tim Hortons"
+    case mcdonalds = "Mcdonald's"
+    case timHortons = "Tim Horton's"
 }
