@@ -12,6 +12,7 @@ struct Item: Identifiable, Equatable {
     let name: String
     let price: Double
     let imageName: String
+    let type: FoodType
 }
 
-var testItem = Item(name: "Burger", price: 4.00, imageName: "MDbigmac")
+var testItem = Item(name: "Burger", price: 4.00, imageName: "MDbigmac", type: FoodType.burger)
