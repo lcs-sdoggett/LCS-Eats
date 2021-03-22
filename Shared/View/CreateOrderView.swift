@@ -55,7 +55,7 @@ struct CreateOrderView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             CreateOrderView(store: testStore)
-                .environmentObject(Order(name: "", phoneNumberOrEmail: "", restaurant: Restaurant.mcdonalds, items: [], itemPrice: 0.0, tax: 0.0, delivery: 0.0, totalPrice: 0.0))
+                .environmentObject(Order(name: "", phoneNumberOrEmail: "", restaurant: Restaurant.mcdonalds, items: []))
         }
     }
 }

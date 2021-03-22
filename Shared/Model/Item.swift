@@ -9,7 +9,6 @@ import Foundation
 
 struct Item: Identifiable, Equatable {
     let id = UUID()
-    var itemChosen = false
     let name: String
     let price: Double
     let imageName: String

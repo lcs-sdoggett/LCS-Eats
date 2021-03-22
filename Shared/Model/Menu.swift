@@ -14,7 +14,7 @@ class Menu: ObservableObject {
         Item(name: "Double Big Mac", price: 8.19, imageName: "MDdoublebigmac"),
         Item(name: "Quarter Pounder With Cheese", price: 6.19, imageName: "MDquarterpounderwithcheese"),
         Item(name: "Double Quarter Pounder With Cheese", price: 8.19, imageName: "MDdoublequarterpounderwithcheese"),
-        Item(name: "Coke", price: 8.19, imageName: "MDcoke")
+        Item(name: "Coke", price: 2.39, imageName: "MDcoke")
     ]
 
     var timsmenu = [

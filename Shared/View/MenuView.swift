@@ -40,15 +40,6 @@ struct MenuView: View {
         } else if order.restaurant.rawValue == "Tim Hortons" {
             Form {
                 ForEach(0..<menu.timsmenu.count) { item in
-                    Toggle(isOn: $menu.timsmenu[item].itemChosen) {
-                        HStack {
-                            Image(menu.timsmenu[item].imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 70, height: 70, alignment: .center)
-                            Text(menu.timsmenu[item].name)
-                        }
-                    }
                 }
             }
         } else if order.restaurant.rawValue == "Pizza Hut" {

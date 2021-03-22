@@ -14,7 +14,7 @@ struct CheckoutView: View {
     @ObservedObject var store: OrderStore
         
     var body: some View {
-        
+                
         if order.items.isEmpty {
             Text("Cart is empty")
                 .font(.title)
@@ -50,12 +50,12 @@ struct CheckoutView: View {
                             }
 
                         }
+                        
                         // Create a list of all of the users items
-                        
-                        
                         Section {
                             Text("Items:")
                             
+                            // Loop that creates a view for each item
                             ForEach(order.items) { item in
                                 HStack {
                                     Image(item.imageName)

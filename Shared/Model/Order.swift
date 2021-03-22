@@ -15,24 +15,45 @@ class Order: ObservableObject, Identifiable {
     @Published var phoneNumberOrEmail: String
     @Published var restaurant: Restaurant
     @Published var items: [Item]
-    @Published var itemPrice: Double
-    @Published var tax: Double
-    @Published var delivery: Double
-    @Published var totalPrice: Double
     
+    // Iterate over the price of each item and add it to "price"
+    var itemPrice: Double {
+        var price = 0.0
+        for item in items {
+            price += item.price
+        }
+        return price
+    }
+        
+    // Multiply the price of the items buy sales tax (13%)
+    var tax: Double {
+        return itemPrice * 0.13
+    }
     
-    internal init(name: String, phoneNumberOrEmail: String, restaurant: Restaurant, items: [Item], itemPrice: Double, tax: Double, delivery: Double, totalPrice: Double) {
+    // If the itemPrice + tax is between two prices, return a value for the delivery
+    var delivery: Double {
+        switch itemPrice + tax {
+        case 0..<5: return 2
+        case 5..<10: return 4
+        case 10..<20: return 5
+        case 20...: return 7
+        default: return 0
+        }
+    }
+    
+    // Return the total price, which is the prices of the items, the tax and the delivery added together
+    var totalPrice: Double {
+        return itemPrice + tax + delivery
+    }
+    
+    internal init(name: String, phoneNumberOrEmail: String, restaurant: Restaurant, items: [Item]) {
         self.name = name
         self.phoneNumberOrEmail = phoneNumberOrEmail
         self.restaurant = restaurant
         self.items = items
-        self.itemPrice = itemPrice
-        self.tax = tax
-        self.delivery = delivery
-        self.totalPrice = totalPrice
     }
 
         
 }
 
-let testData = [Order(name: "scott", phoneNumberOrEmail: "9057853261", restaurant: .mcdonalds, items: [testItem], itemPrice: 0.0, tax: 0.0, delivery: 0.0, totalPrice: 0.0)]
+let testData = [Order(name: "scott", phoneNumberOrEmail: "9057853261", restaurant: .mcdonalds, items: [testItem])]
