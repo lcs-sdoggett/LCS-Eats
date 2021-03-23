@@ -56,9 +56,10 @@ struct CheckoutView: View {
                         }
                         
                         // Create a list of all of the users items
-                        Section {
-                            Text("Items:")
-                            
+                        Section(header: Text("Items:")
+                                    .font(.headline)
+                                    .foregroundColor(.primary)
+                                    .padding(.top)) {                            
                             // Loop that creates a view for each item
                             ForEach(order.items) { item in
                                 HStack {

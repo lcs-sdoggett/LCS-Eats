@@ -39,23 +39,28 @@ struct MenuView: View {
                     Text(FoodType.combo.rawValue).tag(FoodType.combo)
                     Text(FoodType.drink.rawValue).tag(FoodType.drink)
                 }.pickerStyle(MenuPickerStyle())
-
+                
             }
             
-            ForEach(itemList, id: \.id) { item in
-                HStack {
-                    Image(item.imageName)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 70, height: 70, alignment: .center)
-                    Text(item.name)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        order.items.append(item)
-                    }) {
-                        Image(systemName: "plus.circle")
+            Section(header: Text(itemType.rawValue)
+                        .font(.headline)
+                        .foregroundColor(.primary)
+                        .padding(.top)) {
+                ForEach(itemList, id: \.id) { item in
+                    HStack {
+                        Image(item.imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 70, height: 70, alignment: .center)
+                        Text(item.name)
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            order.items.append(item)
+                        }) {
+                            Image(systemName: "plus.circle")
+                        }
                     }
                 }
             }
