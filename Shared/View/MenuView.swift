@@ -15,16 +15,33 @@ struct MenuView: View {
     
     @State private var menu = Menu()
     
+    @State var itemType = FoodType.all
+    
     var itemList: [Item] {
         if order.restaurant.rawValue == "Mcdonald's" {
-            return menu.mcdonaldsMenu
+            return store.filteredItems(menu: menu.mcdonaldsMenu, itemType: itemType, order: order)
         } else {
-            return menu.timsMenu
+            return store.filteredItems(menu: menu.timsMenu, itemType: itemType, order: order)
         }
     }
     
     var body: some View {
         Form {
+            
+            Section {
+                // Picker for the user to chose what type of item they want to see
+                Picker("Sort:", selection: $itemType) {
+                    Text(FoodType.all.rawValue).tag(FoodType.all)
+                    Text(FoodType.burger.rawValue).tag(FoodType.burger)
+                    Text(FoodType.chicken.rawValue).tag(FoodType.chicken)
+                    Text(FoodType.fries.rawValue).tag(FoodType.fries)
+                    Text(FoodType.iceCream.rawValue).tag(FoodType.iceCream)
+                    Text(FoodType.combo.rawValue).tag(FoodType.combo)
+                    Text(FoodType.drink.rawValue).tag(FoodType.drink)
+                }//.pickerStyle(InlinePickerStyle())
+
+            }
+            
             ForEach(itemList, id: \.id) { item in
                 HStack {
                     Image(item.imageName)

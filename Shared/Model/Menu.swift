@@ -22,6 +22,7 @@ class Menu: ObservableObject {
         Item(name: "Muffin", price: 1.49, imageName: "THmuffin", type: FoodType.pastery),
         Item(name: "Danish", price: 1.49, imageName: "THdanish", type: FoodType.pastery)
     ]
+    
 }
 
 var testMenu = Menu()
