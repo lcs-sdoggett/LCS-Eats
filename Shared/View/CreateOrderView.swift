@@ -20,21 +20,24 @@ struct CreateOrderView: View {
                 // Name section
                 Section(header: Text("Name:")
                             .font(.headline)
-                            .padding([.bottom, .top])) {
+                            .foregroundColor(.primary)
+                            .padding(.top)) {
                     TextField("Name", text: $order.name)
                 }
                 
                 // Contact info section
                 Section(header: Text("Phone Number:")
                             .font(.headline)
-                            .padding([.bottom, .top])) {
+                            .foregroundColor(.primary)
+                            .padding(.top)) {
                     TextField("Phone Number/Email", text: $order.phoneNumberOrEmail)
                 }
                 
                 // Section that lets user reflect on if they are able to pickup the food at the givet time
                 Section(header: Text("Can you pickup the food?")
                             .font(.headline)
-                            .padding([.bottom, .top])) {
+                            .foregroundColor(.primary)
+                            .padding(.top)) {
                     Picker("Pickup", selection: $order.pickup) {
                         Text("No").tag(false)
                         Text("Yes").tag(true)
@@ -45,7 +48,8 @@ struct CreateOrderView: View {
                 // Restaurant choice section
                 Section(header: Text("Restaurant:")
                             .font(.headline)
-                            .padding([.bottom, .top])) {
+                            .foregroundColor(.primary)
+                            .padding(.top)) {
                     Picker("Restaurant", selection: $order.restaurant) {
                         Text(Restaurant.mcdonalds.rawValue).tag(Restaurant.mcdonalds)
                         Text(Restaurant.timHortons.rawValue).tag(Restaurant.timHortons)

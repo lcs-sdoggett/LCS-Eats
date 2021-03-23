@@ -26,8 +26,10 @@ struct CheckoutView: View {
                     Form {
                         
                         // Section to dislay the users name
-                        Section {
-                            Text("Name:")
+                        Section(header: Text("Name:")
+                                        .font(.headline)
+                                        .foregroundColor(.primary)
+                                        .padding(.top)) {
                             // If the user didn't input a name, display a red "No Name" text
                             if order.name.isEmpty {
                                 Text("No Name")
@@ -39,8 +41,10 @@ struct CheckoutView: View {
                         }
                         
                         // Section to dislay the users contact info
-                        Section {
-                            Text("Contact Info:")
+                        Section(header: Text("Contact Info:")
+                                        .font(.headline)
+                                        .foregroundColor(.primary)
+                                        .padding(.top)) {
                             // If the user didn't input a name, display a red "No Name" text
                             if order.phoneNumberOrEmail.isEmpty {
                                 Text("No Contact Info")
@@ -83,31 +87,26 @@ struct CheckoutView: View {
                             }
                         }
                         
-                        Section {
-                            Text("Item Price:")
-                                .font(.subheadline)
+                        Section(header: Text("Item Price:")
+                                    .font(.subheadline)) {
                             Text(String(format: "$%.2f", order.itemPrice))
-                                .font(.subheadline)
                         }
                         
-                        Section {
-                            Text("Tax:")
-                                .font(.subheadline)
+                        Section(header: Text("Tax:")
+                                    .font(.subheadline)) {
                             Text(String(format: "$%.2f", order.tax))
-                                .font(.subheadline)
                         }
                         
-                        Section {
-                            Text("Delivery:")
-                                .font(.subheadline)
+                        Section(header: Text("Delivery:")
+                                    .font(.subheadline)) {
                             Text(String(format: "$%.2f", order.delivery))
-                                .font(.subheadline)
                         }
                         
-                        Section {
-                            Text("Total:")
+                        Section(header: Text("Total:")
+                                    .foregroundColor(.primary)
+                                    .font(.headline)) {
                             Text(String(format: "$%.2f", order.totalPrice))
-                                .font(.subheadline)
+                                .font(.headline)
                         }
                                                 
                     }.padding(.bottom, 50)
