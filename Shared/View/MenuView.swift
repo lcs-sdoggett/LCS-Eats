@@ -43,8 +43,10 @@ struct MenuView: View {
             }
             
             Section(header: Text(itemType.rawValue)
-                        .font(.headline)
+                        .bold()
+                        .font(.title3)
                         .foregroundColor(.primary)
+                        .textCase(nil)
                         .padding(.top)) {
                 ForEach(itemList, id: \.id) { item in
                     HStack {

@@ -19,24 +19,30 @@ struct CreateOrderView: View {
                 
                 // Name section
                 Section(header: Text("Name:")
-                            .font(.headline)
+                            .bold()
+                            .font(.title3)
                             .foregroundColor(.primary)
+                            .textCase(nil)
                             .padding(.top)) {
                     TextField("Name", text: $order.name)
                 }
                 
                 // Contact info section
                 Section(header: Text("Phone Number:")
-                            .font(.headline)
+                            .bold()
+                            .font(.title3)
                             .foregroundColor(.primary)
+                            .textCase(nil)
                             .padding(.top)) {
                     TextField("Phone Number/Email", text: $order.phoneNumberOrEmail)
                 }
                 
                 // Section that lets user reflect on if they are able to pickup the food at the givet time
                 Section(header: Text("Can you pickup the food?")
-                            .font(.headline)
+                            .bold()
+                            .font(.title3)
                             .foregroundColor(.primary)
+                            .textCase(nil)
                             .padding(.top)) {
                     Picker("Pickup", selection: $order.pickup) {
                         Text("No").tag(false)
@@ -47,8 +53,10 @@ struct CreateOrderView: View {
                 
                 // Restaurant choice section
                 Section(header: Text("Restaurant:")
-                            .font(.headline)
+                            .bold()
+                            .font(.title3)
                             .foregroundColor(.primary)
+                            .textCase(nil)
                             .padding(.top)) {
                     Picker("Restaurant", selection: $order.restaurant) {
                         Text(Restaurant.mcdonalds.rawValue).tag(Restaurant.mcdonalds)

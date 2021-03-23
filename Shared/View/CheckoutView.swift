@@ -27,8 +27,10 @@ struct CheckoutView: View {
                         
                         // Section to dislay the users name
                         Section(header: Text("Name:")
-                                        .font(.headline)
-                                        .foregroundColor(.primary)
+                                    .bold()
+                                    .font(.title3)
+                                    .foregroundColor(.primary)
+                                    .textCase(nil)
                                         .padding(.top)) {
                             // If the user didn't input a name, display a red "No Name" text
                             if order.name.isEmpty {
@@ -42,8 +44,10 @@ struct CheckoutView: View {
                         
                         // Section to dislay the users contact info
                         Section(header: Text("Contact Info:")
-                                        .font(.headline)
-                                        .foregroundColor(.primary)
+                                    .bold()
+                                    .font(.title3)
+                                    .foregroundColor(.primary)
+                                    .textCase(nil)
                                         .padding(.top)) {
                             // If the user didn't input a name, display a red "No Name" text
                             if order.phoneNumberOrEmail.isEmpty {
@@ -57,8 +61,10 @@ struct CheckoutView: View {
                         
                         // Create a list of all of the users items
                         Section(header: Text("Items:")
-                                    .font(.headline)
+                                    .bold()
+                                    .font(.title3)
                                     .foregroundColor(.primary)
+                                    .textCase(nil)
                                     .padding(.top)) {                            
                             // Loop that creates a view for each item
                             ForEach(order.items) { item in
@@ -104,8 +110,10 @@ struct CheckoutView: View {
                         }
                         
                         Section(header: Text("Total:")
+                                    .bold()
+                                    .font(.title3)
                                     .foregroundColor(.primary)
-                                    .font(.headline)) {
+                                    .textCase(nil)) {
                             Text(String(format: "$%.2f", order.totalPrice))
                                 .font(.headline)
                         }
