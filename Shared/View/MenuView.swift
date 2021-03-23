@@ -15,8 +15,10 @@ struct MenuView: View {
     
     @State private var menu = Menu()
     
+    // This is changed by the picker. It is sent to the filteredItems func that decides what items will be shown in the menu view
     @State var itemType = FoodType.all
     
+    // Sends a different menu based on the restaurant that was chosen. Returns a list of items that will be shown in the
     var itemList: [Item] {
         if order.restaurant.rawValue == "Mcdonald's" {
             return store.filteredItems(menu: menu.mcdonaldsMenu, itemType: itemType, order: order)
@@ -42,12 +44,15 @@ struct MenuView: View {
                 
             }
             
+            // Header of section set to the menu being shown
             Section(header: Text(itemType.rawValue)
                         .bold()
                         .font(.title3)
                         .foregroundColor(.primary)
                         .textCase(nil)
                         .padding(.top)) {
+                
+                // Itterates over the items that are going to be shwon
                 ForEach(itemList, id: \.id) { item in
                     HStack {
                         Image(item.imageName)
@@ -58,6 +63,7 @@ struct MenuView: View {
                         
                         Spacer()
                         
+                        // This button appends the item they chose to the orders items array
                         Button(action: {
                             order.items.append(item)
                         }) {
