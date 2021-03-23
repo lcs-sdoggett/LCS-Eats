@@ -17,20 +17,18 @@ struct CreateOrderView: View {
         VStack{
             Form {
                 
-                Section {
-                    Text("Name:")
-                    
+                // Name section
+                Section(header: Text("Name:").font(.headline).padding([.bottom, .top])) {
                     TextField("Name", text: $order.name)
                 }
                 
-                Section {
-                    Text("Phone Number:")
-                    
+                // Contact info section
+                Section(header: Text("Phone Number:").font(.headline).padding([.bottom, .top])) {
                     TextField("Phone Number/Email", text: $order.phoneNumberOrEmail)
                 }
                 
-                Section {
-                    Text("Restaurant:")
+                // Restaurant choice section
+                Section(header: Text("Restaurant:").font(.headline).padding([.bottom, .top])) {
                     Picker("Restaurant", selection: $order.restaurant) {
                         Text(Restaurant.mcdonalds.rawValue).tag(Restaurant.mcdonalds)
                         Text(Restaurant.timHortons.rawValue).tag(Restaurant.timHortons)
@@ -46,7 +44,7 @@ struct CreateOrderView: View {
                     .foregroundColor(.white)
                     .padding(.top, -10)
             })
-        }.navigationTitle("Cart")
+        }.navigationTitle("Order")
         
     }
 }
