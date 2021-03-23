@@ -94,21 +94,25 @@ struct CheckoutView: View {
                             }
                         }
                         
+                        // Section for price of items
                         Section(header: Text("Item Price:")
                                     .font(.subheadline)) {
                             Text(String(format: "$%.2f", order.itemPrice))
                         }
                         
+                        // Section for tax
                         Section(header: Text("Tax:")
                                     .font(.subheadline)) {
                             Text(String(format: "$%.2f", order.tax))
                         }
                         
+                        // Section for delivery
                         Section(header: Text("Delivery:")
                                     .font(.subheadline)) {
                             Text(String(format: "$%.2f", order.delivery))
                         }
                         
+                        // Section for total price of order
                         Section(header: Text("Total:")
                                     .bold()
                                     .font(.title3)
