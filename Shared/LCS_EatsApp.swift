@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct LCS_EatsApp: App {
     
-    @StateObject var order = Order(name: "", phoneNumberOrEmail: "", restaurant: .mcdonalds, items: [])
+    @StateObject var order = Order(name: "", phoneNumberOrEmail: "", pickup: false, restaurant: .mcdonalds, items: [])
     @StateObject var store = OrderStore()
     
     private var badgePosition: CGFloat = 2

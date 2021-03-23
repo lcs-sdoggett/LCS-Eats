@@ -18,17 +18,34 @@ struct CreateOrderView: View {
             Form {
                 
                 // Name section
-                Section(header: Text("Name:").font(.headline).padding([.bottom, .top])) {
+                Section(header: Text("Name:")
+                            .font(.headline)
+                            .padding([.bottom, .top])) {
                     TextField("Name", text: $order.name)
                 }
                 
                 // Contact info section
-                Section(header: Text("Phone Number:").font(.headline).padding([.bottom, .top])) {
+                Section(header: Text("Phone Number:")
+                            .font(.headline)
+                            .padding([.bottom, .top])) {
                     TextField("Phone Number/Email", text: $order.phoneNumberOrEmail)
                 }
                 
+                // Section that lets user reflect on if they are able to pickup the food at the givet time
+                Section(header: Text("Can you pickup the food?")
+                            .font(.headline)
+                            .padding([.bottom, .top])) {
+                    Picker("Pickup", selection: $order.pickup) {
+                        Text("No").tag(false)
+                        Text("Yes").tag(true)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                
                 // Restaurant choice section
-                Section(header: Text("Restaurant:").font(.headline).padding([.bottom, .top])) {
+                Section(header: Text("Restaurant:")
+                            .font(.headline)
+                            .padding([.bottom, .top])) {
                     Picker("Restaurant", selection: $order.restaurant) {
                         Text(Restaurant.mcdonalds.rawValue).tag(Restaurant.mcdonalds)
                         Text(Restaurant.timHortons.rawValue).tag(Restaurant.timHortons)
@@ -53,7 +70,7 @@ struct CreateOrderView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             CreateOrderView(store: testStore)
-                .environmentObject(Order(name: "", phoneNumberOrEmail: "", restaurant: Restaurant.mcdonalds, items: []))
+                .environmentObject(Order(name: "", phoneNumberOrEmail: "", pickup: true, restaurant: Restaurant.mcdonalds, items: []))
         }
     }
 }

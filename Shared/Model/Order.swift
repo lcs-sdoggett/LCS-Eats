@@ -13,6 +13,7 @@ class Order: ObservableObject, Identifiable {
     var id = UUID()
     @Published var name: String
     @Published var phoneNumberOrEmail: String
+    @Published var pickup: Bool
     @Published var restaurant: Restaurant
     @Published var items: [Item]
     
@@ -46,9 +47,10 @@ class Order: ObservableObject, Identifiable {
         return itemPrice + tax + delivery
     }
     
-    internal init(name: String, phoneNumberOrEmail: String, restaurant: Restaurant, items: [Item]) {
+    internal init(name: String, phoneNumberOrEmail: String, pickup: Bool, restaurant: Restaurant, items: [Item]) {
         self.name = name
         self.phoneNumberOrEmail = phoneNumberOrEmail
+        self.pickup = pickup
         self.restaurant = restaurant
         self.items = items
     }
@@ -56,4 +58,4 @@ class Order: ObservableObject, Identifiable {
         
 }
 
-let testData = [Order(name: "scott", phoneNumberOrEmail: "9057853261", restaurant: .mcdonalds, items: [testItem])]
+let testData = [Order(name: "scott", phoneNumberOrEmail: "9057853261", pickup: true, restaurant: .mcdonalds, items: [testItem])]
