@@ -30,7 +30,7 @@ struct MenuView: View {
             
             Section {
                 // Picker for the user to chose what type of item they want to see
-                Picker("Sort:", selection: $itemType) {
+                Picker("Sort Menu", selection: $itemType) {
                     Text(FoodType.all.rawValue).tag(FoodType.all)
                     Text(FoodType.burger.rawValue).tag(FoodType.burger)
                     Text(FoodType.chicken.rawValue).tag(FoodType.chicken)
@@ -38,7 +38,7 @@ struct MenuView: View {
                     Text(FoodType.iceCream.rawValue).tag(FoodType.iceCream)
                     Text(FoodType.combo.rawValue).tag(FoodType.combo)
                     Text(FoodType.drink.rawValue).tag(FoodType.drink)
-                }//.pickerStyle(InlinePickerStyle())
+                }.pickerStyle(MenuPickerStyle())
 
             }
             
