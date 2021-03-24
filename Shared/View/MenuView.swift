@@ -31,16 +31,28 @@ struct MenuView: View {
         Form {
             
             Section {
-                // Picker for the user to chose what type of item they want to see
-                Picker("Sort Menu", selection: $itemType) {
-                    Text(FoodType.all.rawValue).tag(FoodType.all)
-                    Text(FoodType.burger.rawValue).tag(FoodType.burger)
-                    Text(FoodType.chicken.rawValue).tag(FoodType.chicken)
-                    Text(FoodType.fries.rawValue).tag(FoodType.fries)
-                    Text(FoodType.iceCream.rawValue).tag(FoodType.iceCream)
-                    Text(FoodType.combo.rawValue).tag(FoodType.combo)
-                    Text(FoodType.drink.rawValue).tag(FoodType.drink)
-                }.pickerStyle(MenuPickerStyle())
+                
+                // Picker to allow the user to sort through which items they would like
+                if order.restaurant.rawValue == "Mcdonald's" {
+                    // This picker will appear if the user chose McDonalds as their restaurant
+                    Picker("Sort Menu", selection: $itemType) {
+                        Text(FoodType.all.rawValue).tag(FoodType.all)
+                        Text(FoodType.burger.rawValue).tag(FoodType.burger)
+                        Text(FoodType.chicken.rawValue).tag(FoodType.chicken)
+                        Text(FoodType.fries.rawValue).tag(FoodType.fries)
+                        Text(FoodType.iceCream.rawValue).tag(FoodType.iceCream)
+                        Text(FoodType.combo.rawValue).tag(FoodType.combo)
+                        Text(FoodType.drink.rawValue).tag(FoodType.drink)
+                    }.pickerStyle(MenuPickerStyle())
+                } else {
+                    // This picker will appear if the user chose Tim Hortons as their restaurant
+                    Picker("Sort Menu", selection: $itemType) {
+                        Text(FoodType.all.rawValue).tag(FoodType.all)
+                        Text(FoodType.food.rawValue).tag(FoodType.food)
+                        Text(FoodType.bakery.rawValue).tag(FoodType.bakery)
+                        Text(FoodType.drink.rawValue).tag(FoodType.drink)
+                    }.pickerStyle(MenuPickerStyle())
+                }
                 
             }
             

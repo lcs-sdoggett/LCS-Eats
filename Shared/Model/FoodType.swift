@@ -19,9 +19,8 @@ enum FoodType: String {
     case combo = "Combos"
     
     // Tims
-    case pastery = "Pastery"
-    
-    
+    case food = "Food"
+    case bakery = "Bakery"
     
     // Both
     case drink = "Drinks"
