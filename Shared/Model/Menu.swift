@@ -34,7 +34,9 @@ class Menu: ObservableObject {
         
         // IceCream
         Item(name: "Vanilla Cone", price: 1.79, imageName: "MDvanillacone", type: FoodType.iceCream),
-        
+        Item(name: "Fudge Sundae", price: 2.89, imageName: "MDfudgesundae", type: FoodType.iceCream),
+        Item(name: "Caramel Sundae", price: 2.89, imageName: "MDcaramelsundae", type: FoodType.iceCream),
+
         
         // Drinks
         Item(name: "Coke", price: 2.39, imageName: "MDcoke", type: FoodType.drink)
