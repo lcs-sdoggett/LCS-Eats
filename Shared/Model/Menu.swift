@@ -36,6 +36,21 @@ class Menu: ObservableObject {
         Item(name: "Vanilla Cone", price: 1.79, imageName: "MDvanillacone", type: FoodType.iceCream),
         Item(name: "Fudge Sundae", price: 2.89, imageName: "MDfudgesundae", type: FoodType.iceCream),
         Item(name: "Caramel Sundae", price: 2.89, imageName: "MDcaramelsundae", type: FoodType.iceCream),
+        Item(name: "Regular McFlurry", price: 3.99, imageName: "MDlargemcflurry", type: FoodType.iceCream),
+        Item(name: "Mini McFlurry", price: 3.29, imageName: "MDsmallmcflurry", type: FoodType.iceCream),
+        
+        // Combos
+        Item(name: "Quarter Pounder Combo", price: 10.49, imageName: "MDquarterpounderwithcheesecombo", type: FoodType.combo),
+        Item(name: "Double Quarter Pounder Combo", price: 12.49, imageName: "MDdoublequarterpounderwithcheesecombo", type: FoodType.combo),
+        Item(name: "Big Mac Combo", price: 9.49, imageName: "MDbicmaccombo", type: FoodType.combo),
+        // Big mac combo
+        // Change picture for these
+        Item(name: "6 McNuggetts Combo", price: 9.99, imageName: "MD6piecenuggets", type: FoodType.combo),
+        Item(name: "10 McNuggetts Combo", price: 12.99, imageName: "MD10piecenuggets", type: FoodType.combo),
+        Item(name: "20 McNuggetts Combo", price: 19.99, imageName: "MD20piecenuggets", type: FoodType.combo),
+
+
+
 
         
         // Drinks
