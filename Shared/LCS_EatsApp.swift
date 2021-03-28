@@ -4,6 +4,11 @@
 //
 //  Created by Doggett, Scott on 2021-01-28.
 //
+// Reasource used to create badge in tab view.
+// Accessed 2021-03-21
+//https://medium.com/flawless-app-stories/swiftui-tutorial-showing-badge-on-tab-bar-item-d71e4075b67a
+//
+//
 
 import SwiftUI
 

@@ -25,7 +25,7 @@ class OrderStore: ObservableObject {
             
             // Create an empty array of items, that will be populated and returned based on what was chosen.
             var matchingItems: [Item] = []
-                        
+            
             for item in menu {
                 // If the type of the item in the menu matches the type of the item they want to see, append it to the array
                 if item.type == itemType {
@@ -37,6 +37,5 @@ class OrderStore: ObservableObject {
         }
     }
 }
-
 let testStore = OrderStore(orders: testData)
 
