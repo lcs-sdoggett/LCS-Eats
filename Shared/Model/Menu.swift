@@ -99,5 +99,3 @@ class Menu: ObservableObject {
     ]
     
 }
-
-var testMenu = Menu()

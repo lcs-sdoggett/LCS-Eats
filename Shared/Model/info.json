@@ -11,7 +11,15 @@
         "text": "Where do I pay?",
         "children": [
             {
-            "text": "We accept payment outside of the SLC between 12:45 and 1:30. We accept cash or card."
+            "text": "To pay for your order, you will have to come to the SLC between 12:45 and 1:30. You can pay with either cash, debit or credit. We also accept apple pay."
+            }
+        ]
+    },
+    {
+        "text": "What happens if I don't pay?",
+        "children": [
+            {
+            "text": "If you do not pay for your order before lunch is over, we are unable to pick up your order and you will not recieve your food."
             }
         ]
     },
@@ -24,18 +32,10 @@
         ]
     },
     {
-        "text": "How can I get in contact with the people delivering?",
-        "children": [
-            {
-            "text": "Here are the numbers of the LCS Eats employees:"
-            }
-        ]
-    },
-    {
         "text": "What happens if the restaurant doesn't have what I ordered?",
         "children": [
             {
-            "text": "We keep track of all our orders, so we will bring you your order on our following business day, or a day we run of your choice."
+            "text": "If the restaurant you've ordered from does not have what you ordered, we will bring you the missing items on the following business day. "
             }
         ]
     },

@@ -3,6 +3,8 @@
 //  LCS Eats
 //
 //  Created by Doggett, Scott on 2021-04-08.
+//  Original source for code:
+// https://levelupprogramming.net/how-to-send-email-in-swiftui-5a9047e3442f
 //
 
 import Foundation

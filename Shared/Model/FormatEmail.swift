@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 func returnMessage(order: Order) -> String {
     
     var itemsString = ""

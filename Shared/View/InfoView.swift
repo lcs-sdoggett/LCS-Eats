@@ -17,9 +17,12 @@ struct InfoView: View {
 
             // If there are children on this tip
             if info.children != nil {
+                
                 Label(info.text, systemImage: "quote.bubble")
+                    .font(.headline)
             } else {
                 Text(info.text)
+                    .font(.body)
             }
 
         }.navigationTitle("Info")
