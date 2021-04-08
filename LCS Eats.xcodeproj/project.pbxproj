@@ -35,6 +35,8 @@
 		7DCE5CBB25C320FD0077BB16 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE5CB925C320FD0077BB16 /* Order.swift */; };
 		7DD063DC261F806100914653 /* EmailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD063DB261F806100914653 /* EmailSender.swift */; };
 		7DD063DD261F806100914653 /* EmailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD063DB261F806100914653 /* EmailSender.swift */; };
+		7DD063E1261F80F800914653 /* FormatEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD063E0261F80F800914653 /* FormatEmail.swift */; };
+		7DD063E2261F80F800914653 /* FormatEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD063E0261F80F800914653 /* FormatEmail.swift */; };
 		7DFCB54525FA7FFA004F545B /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFCB54425FA7FFA004F545B /* CheckoutView.swift */; };
 		7DFCB54625FA7FFA004F545B /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFCB54425FA7FFA004F545B /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,7 @@
 		7DCE5C9D25C320560077BB16 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		7DCE5CB925C320FD0077BB16 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		7DD063DB261F806100914653 /* EmailSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSender.swift; sourceTree = "<group>"; };
+		7DD063E0261F80F800914653 /* FormatEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatEmail.swift; sourceTree = "<group>"; };
 		7DFCB54425FA7FFA004F545B /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +142,7 @@
 				7D2B037926095F2100001254 /* FoodType.swift */,
 				7D0B851A25F1482C00CC959E /* Menu.swift */,
 				7DD063DB261F806100914653 /* EmailSender.swift */,
+				7DD063E0261F80F800914653 /* FormatEmail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,6 +260,7 @@
 				7D52337125C4A1AF007E0277 /* InfoView.swift in Sources */,
 				7D52336125C4A04D007E0277 /* Info.swift in Sources */,
 				7DFCB54525FA7FFA004F545B /* CheckoutView.swift in Sources */,
+				7DD063E1261F80F800914653 /* FormatEmail.swift in Sources */,
 				7D5E46DA25C3A34100AC8811 /* MenuView.swift in Sources */,
 				7D36A47F25C36C2E008B2E03 /* CreateOrderView.swift in Sources */,
 				7D51DA4E25EF032300983C41 /* OrderStore.swift in Sources */,
@@ -276,6 +281,7 @@
 				7D52337225C4A1AF007E0277 /* InfoView.swift in Sources */,
 				7D52336225C4A04D007E0277 /* Info.swift in Sources */,
 				7DFCB54625FA7FFA004F545B /* CheckoutView.swift in Sources */,
+				7DD063E2261F80F800914653 /* FormatEmail.swift in Sources */,
 				7D5E46DB25C3A34100AC8811 /* MenuView.swift in Sources */,
 				7D36A48025C36C2E008B2E03 /* CreateOrderView.swift in Sources */,
 				7D51DA4F25EF032300983C41 /* OrderStore.swift in Sources */,

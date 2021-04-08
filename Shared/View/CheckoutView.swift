@@ -12,6 +12,10 @@ struct CheckoutView: View {
     @EnvironmentObject var order: Order
     
     @ObservedObject var store: OrderStore
+    
+    @State private var showingAlert = false
+    
+    @Environment(\.openURL) var openURL
         
     var body: some View {
                 
@@ -130,6 +134,14 @@ struct CheckoutView: View {
                     Spacer()
                     
                     Button(action: {
+                        let message = returnMessage(order: order)
+                        
+                        do {
+                            // Invoke the static property on the EmailHelper class and send an email using the phone's configured email client
+                            try EmailHelper.shared.sendEmail(subject: "LCS Eats Order", body: message)
+                        } catch {
+                            showingAlert = true
+                        }
                         
                     }) {
                         Text(String(format: "Place Order: $%.2f", order.totalPrice))
@@ -139,6 +151,16 @@ struct CheckoutView: View {
                             .foregroundColor(.white)
                     }
                 }
+            }.alert(isPresented: $showingAlert) {
+                
+                Alert(
+                     title: Text("Cannot send email"),
+                     message: Text("No email client is configured. Please add an email account to your device."),
+                     primaryButton: .default(Text("Learn How")) {
+                        openURL(URL(string: "https://support.apple.com/en-us/HT201320")!)
+                     },
+                    secondaryButton: .default(Text("Not Now"))
+                 )
             }
         }
     }
