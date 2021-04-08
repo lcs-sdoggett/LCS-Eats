@@ -33,6 +33,8 @@
 		7DCE5CA325C320560077BB16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DCE5C8D25C320560077BB16 /* Assets.xcassets */; };
 		7DCE5CBA25C320FD0077BB16 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE5CB925C320FD0077BB16 /* Order.swift */; };
 		7DCE5CBB25C320FD0077BB16 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE5CB925C320FD0077BB16 /* Order.swift */; };
+		7DD063DC261F806100914653 /* EmailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD063DB261F806100914653 /* EmailSender.swift */; };
+		7DD063DD261F806100914653 /* EmailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD063DB261F806100914653 /* EmailSender.swift */; };
 		7DFCB54525FA7FFA004F545B /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFCB54425FA7FFA004F545B /* CheckoutView.swift */; };
 		7DFCB54625FA7FFA004F545B /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFCB54425FA7FFA004F545B /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,7 @@
 		7DCE5C9C25C320560077BB16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DCE5C9D25C320560077BB16 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		7DCE5CB925C320FD0077BB16 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		7DD063DB261F806100914653 /* EmailSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSender.swift; sourceTree = "<group>"; };
 		7DFCB54425FA7FFA004F545B /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +138,7 @@
 				7D0B850825F13A4700CC959E /* Item.swift */,
 				7D2B037926095F2100001254 /* FoodType.swift */,
 				7D0B851A25F1482C00CC959E /* Menu.swift */,
+				7DD063DB261F806100914653 /* EmailSender.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,6 +260,7 @@
 				7D36A47F25C36C2E008B2E03 /* CreateOrderView.swift in Sources */,
 				7D51DA4E25EF032300983C41 /* OrderStore.swift in Sources */,
 				7D0B851B25F1482C00CC959E /* Menu.swift in Sources */,
+				7DD063DC261F806100914653 /* EmailSender.swift in Sources */,
 				7D2B037A26095F2100001254 /* FoodType.swift in Sources */,
 				7DCE5CBA25C320FD0077BB16 /* Order.swift in Sources */,
 				7D0B850925F13A4700CC959E /* Item.swift in Sources */,
@@ -275,6 +280,7 @@
 				7D36A48025C36C2E008B2E03 /* CreateOrderView.swift in Sources */,
 				7D51DA4F25EF032300983C41 /* OrderStore.swift in Sources */,
 				7D0B851C25F1482C00CC959E /* Menu.swift in Sources */,
+				7DD063DD261F806100914653 /* EmailSender.swift in Sources */,
 				7D2B037B26095F2100001254 /* FoodType.swift in Sources */,
 				7DCE5CBB25C320FD0077BB16 /* Order.swift in Sources */,
 				7D0B850A25F13A4700CC959E /* Item.swift in Sources */,
