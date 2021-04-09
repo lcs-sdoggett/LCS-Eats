@@ -13,12 +13,12 @@ struct CheckoutView: View {
     
     @ObservedObject var store: OrderStore
     
-    @State private var showingAlert = false
+    @State private var showingEmailAlert = false
     
     @Environment(\.openURL) var openURL
-        
+    
     var body: some View {
-                
+        
         if order.items.isEmpty {
             Text("Cart is empty")
                 .font(.title)
@@ -35,7 +35,7 @@ struct CheckoutView: View {
                                     .font(.title3)
                                     .foregroundColor(.primary)
                                     .textCase(nil)
-                                        .padding(.top)) {
+                                    .padding(.top)) {
                             // If the user didn't input a name, display a red "No Name" text
                             if order.name.isEmpty {
                                 Text("No Name")
@@ -43,7 +43,7 @@ struct CheckoutView: View {
                             } else {
                                 Text("\(order.name)")
                             }
-
+                            
                         }
                         
                         // Section to dislay the users contact info
@@ -52,7 +52,7 @@ struct CheckoutView: View {
                                     .font(.title3)
                                     .foregroundColor(.primary)
                                     .textCase(nil)
-                                        .padding(.top)) {
+                                    .padding(.top)) {
                             // If the user didn't input a name, display a red "No Name" text
                             if order.phoneNumberOrEmail.isEmpty {
                                 Text("No Contact Info")
@@ -60,7 +60,7 @@ struct CheckoutView: View {
                             } else {
                                 Text("\(order.phoneNumberOrEmail)")
                             }
-
+                            
                         }
                         
                         // Create a list of all of the users items
@@ -125,7 +125,7 @@ struct CheckoutView: View {
                             Text(String(format: "$%.2f", order.totalPrice))
                                 .font(.headline)
                         }
-                                                
+                        
                     }.padding(.bottom, 50)
                     
                 }.navigationTitle("Checkout")
@@ -134,13 +134,16 @@ struct CheckoutView: View {
                     Spacer()
                     
                     Button(action: {
+
                         let message = returnMessage(order: order)
+                        
+                        print(message)
                         
                         do {
                             // Invoke the static property on the EmailHelper class and send an email using the phone's configured email client
                             try EmailHelper.shared.sendEmail(subject: "LCS Eats Order", body: message)
                         } catch {
-                            showingAlert = true
+                            showingEmailAlert = true
                         }
                         
                     }) {
@@ -151,16 +154,15 @@ struct CheckoutView: View {
                             .foregroundColor(.white)
                     }
                 }
-            }.alert(isPresented: $showingAlert) {
-                
+            }.alert(isPresented: $showingEmailAlert) {
                 Alert(
-                     title: Text("Cannot send email"),
-                     message: Text("No email client is configured. Please add an email account to your device."),
-                     primaryButton: .default(Text("Learn How")) {
+                    title: Text("Cannot send email"),
+                    message: Text("No email client is configured. Please add an email account to your device."),
+                    primaryButton: .default(Text("Learn How")) {
                         openURL(URL(string: "https://support.apple.com/en-us/HT201320")!)
-                     },
+                    },
                     secondaryButton: .default(Text("Not Now"))
-                 )
+                )
             }
         }
     }

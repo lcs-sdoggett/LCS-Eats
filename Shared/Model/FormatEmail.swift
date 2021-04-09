@@ -12,7 +12,7 @@ func returnMessage(order: Order) -> String {
     var itemsString = ""
     
     for item in order.items {
-        itemsString = "\(itemsString) \(item),"
+        itemsString = "\(itemsString) \(item.name),"
     }
     
     
@@ -25,9 +25,13 @@ Restaurant: \(order.restaurant.rawValue)
 
 Items: \(itemsString)
 
-Item Price: \(order.itemPrice)
+Item Price: \(String(format: "$%.2f", order.itemPrice))
 
-Total: \(order.totalPrice)
+Tax: \(String(format: "$%.2f", order.tax))
+
+Delivery: \(String(format: "$%.2f", order.delivery))
+
+Total: \(String(format: "$%.2f", order.totalPrice))
 
 """
     return body

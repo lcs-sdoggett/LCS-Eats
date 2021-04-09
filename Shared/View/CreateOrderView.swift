@@ -37,20 +37,6 @@ struct CreateOrderView: View {
                     TextField("Phone Number/Email", text: $order.phoneNumberOrEmail)
                 }
                 
-                // Section that lets user reflect on if they are able to pickup the food at the givet time
-                Section(header: Text("Can you pickup the food?")
-                            .bold()
-                            .font(.title3)
-                            .foregroundColor(.primary)
-                            .textCase(nil)
-                            .padding(.top)) {
-                    Picker("Pickup", selection: $order.pickup) {
-                        Text("No").tag(false)
-                        Text("Yes").tag(true)
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                }
-                
                 // Restaurant choice section
                 Section(header: Text("Restaurant:")
                             .bold()
@@ -64,6 +50,21 @@ struct CreateOrderView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
+                
+                // Section that lets user reflect on if they are able to pickup the food at the givet time
+                Section(header: Text("Are you available to pickup your order?")
+                            .bold()
+                            .font(.title3)
+                            .foregroundColor(.primary)
+                            .textCase(nil)
+                            .padding(.top)) {
+                    Picker("Pickup", selection: $order.pickup) {
+                        Text("No").tag(false)
+                        Text("Yes").tag(true)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                
             }
             NavigationLink(destination: MenuView(store: store).environmentObject(order), label : {
                 Text("Next")

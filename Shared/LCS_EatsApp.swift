@@ -18,6 +18,7 @@ struct LCS_EatsApp: App {
     @StateObject var order = Order(name: "", phoneNumberOrEmail: "", pickup: false, restaurant: .mcdonalds, items: [])
     @StateObject var store = OrderStore()
     
+    // These are used to make sure the badge is located in the correct spot
     private var badgePosition: CGFloat = 2
     private var tabsCount: CGFloat = 3
     
@@ -57,10 +58,12 @@ struct LCS_EatsApp: App {
                         }
                     }
                     
+                    // Badge
                     ZStack {
                         Circle()
                             .foregroundColor(.red)
-
+                        
+                        // THe number in the badge changes based on number of items in the order
                         Text("\(order.items.count)")
                             .foregroundColor(.white)
                             .font(Font.system(size: 12))
