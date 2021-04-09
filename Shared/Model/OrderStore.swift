@@ -14,7 +14,7 @@ class OrderStore: ObservableObject {
         self.orders = orders
     }
     
-    // Function that returns the items that should be displaying based on the item type, chosen by the user
+    // Function that returns the items that should be displayed based on the item type, chosen by the user
     func filteredItems(menu: [Item], itemType: FoodType, order: Order) -> [Item] {
         
         if itemType == FoodType.all {
@@ -32,7 +32,7 @@ class OrderStore: ObservableObject {
                     matchingItems.append(item)
                 }
             }
-            // Return the arrya of items
+            // Return the array of items
             return matchingItems
         }
     }

@@ -51,7 +51,7 @@ struct CreateOrderView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
                 
-                // Section that lets user reflect on if they are able to pickup the food at the givet time
+                // Section that lets user reflect on if they are able to pick up the food at the given time
                 Section(header: Text("Are you available to pickup your order?")
                             .bold()
                             .font(.title3)

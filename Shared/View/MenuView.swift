@@ -32,9 +32,9 @@ struct MenuView: View {
             
             Section {
                 
-                // Picker to allow the user to sort through which items they would like
+                // Picker to allow the user to sort through which items they would like to see
                 if order.restaurant.rawValue == "Mcdonald's" {
-                    // This picker will appear if the user chose McDonalds as their restaurant
+                    // This picker will appear if the user choses McDonalds as their restaurant
                     Picker("Sort Menu", selection: $itemType) {
                         Text(FoodType.all.rawValue).tag(FoodType.all)
                         Text(FoodType.burger.rawValue).tag(FoodType.burger)
@@ -45,7 +45,7 @@ struct MenuView: View {
                         Text(FoodType.drink.rawValue).tag(FoodType.drink)
                     }.pickerStyle(MenuPickerStyle())
                 } else {
-                    // This picker will appear if the user chose Tim Hortons as their restaurant
+                    // This picker will appear if the user choses Tim Hortons as their restaurant
                     Picker("Sort Menu", selection: $itemType) {
                         Text(FoodType.all.rawValue).tag(FoodType.all)
                         Text(FoodType.food.rawValue).tag(FoodType.food)

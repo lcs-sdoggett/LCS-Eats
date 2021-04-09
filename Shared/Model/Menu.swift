@@ -43,8 +43,6 @@ class Menu: ObservableObject {
         Item(name: "Quarter Pounder Combo", price: 10.49, imageName: "MDquarterpounderwithcheesecombo", type: FoodType.combo),
         Item(name: "Double Quarter Pounder Combo", price: 12.49, imageName: "MDdoublequarterpounderwithcheesecombo", type: FoodType.combo),
         Item(name: "Big Mac Combo", price: 9.49, imageName: "MDbicmaccombo", type: FoodType.combo),
-        // Big mac combo
-        // Change picture for these
         Item(name: "6 McNuggetts Combo", price: 9.99, imageName: "MD6piecenuggets", type: FoodType.combo),
         Item(name: "10 McNuggetts Combo", price: 12.99, imageName: "MD10piecenuggets", type: FoodType.combo),
         Item(name: "20 McNuggetts Combo", price: 19.99, imageName: "MD20piecenuggets", type: FoodType.combo),

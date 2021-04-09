@@ -11,6 +11,7 @@ func returnMessage(order: Order) -> String {
     
     var itemsString = ""
     
+    // Create a string that includes the names of all the itesm added
     for item in order.items {
         itemsString = "\(itemsString) \(item.name),"
     }

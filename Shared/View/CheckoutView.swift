@@ -13,8 +13,10 @@ struct CheckoutView: View {
     
     @ObservedObject var store: OrderStore
     
+    // Changes if alert needs to be shown
     @State private var showingEmailAlert = false
     
+    // Used to open website if user has not set up an email account
     @Environment(\.openURL) var openURL
     
     var body: some View {
@@ -70,7 +72,7 @@ struct CheckoutView: View {
                                     .foregroundColor(.primary)
                                     .textCase(nil)
                                     .padding(.top)) {                            
-                            // Loop that creates a view for each item
+                            // Loop that creates a cell view for each item
                             ForEach(order.items) { item in
                                 HStack {
                                     Image(item.imageName)
@@ -86,7 +88,7 @@ struct CheckoutView: View {
                                     }
                                     Spacer()
                                     
-                                    // This button will remove the item from the list if the user no longer wants the item in their order
+                                    // This button removes the item from the order if the user no longer wants the item
                                     Button(action: {
                                         if let index = order.items.firstIndex(of: item) {
                                             order.items.remove(at: index)
@@ -140,7 +142,6 @@ struct CheckoutView: View {
                         print(message)
                         
                         do {
-                            // Invoke the static property on the EmailHelper class and send an email using the phone's configured email client
                             try EmailHelper.shared.sendEmail(subject: "LCS Eats Order", body: message)
                         } catch {
                             showingEmailAlert = true

@@ -8,7 +8,7 @@
 import Foundation
 
 enum FoodType: String {
-    // If the user choses this they want to see all the items
+    // If the user chooses this they want to see all the items
     case all = "All"
     
     // Mcdonalds
