@@ -2,7 +2,7 @@
 //  Info.swift
 //  LCS Eats
 //
-//  Created by Doggett, Scott on 2021-01-29.
+//  Created on 2021-01-29.
 //
 
 import SwiftUI
@@ -15,7 +15,6 @@ struct InfoView: View {
         
         List(info, id: \.text, children: \.children) { info in
 
-            // If there are children on this tip
             if info.children != nil {
                 
                 Label(info.text, systemImage: "quote.bubble")
