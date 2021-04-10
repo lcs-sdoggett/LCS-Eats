@@ -2,7 +2,7 @@
 //  CartView.swift
 //  LCS Eats
 //
-//  Created by Doggett, Scott on 2021-03-11.
+//  Created on 2021-03-11.
 //
 
 import SwiftUI

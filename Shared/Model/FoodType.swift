@@ -2,7 +2,7 @@
 //  FoodType.swift
 //  LCS Eats
 //
-//  Created by Doggett, Scott on 2021-03-22.
+//  Created on 2021-03-22.
 //
 
 import Foundation

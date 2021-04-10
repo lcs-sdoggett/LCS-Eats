@@ -2,7 +2,7 @@
 //  MenuView.swift
 //  LCS Eats
 //
-//  Created by Doggett, Scott on 2021-01-28.
+//  Created on 2021-01-28.
 //
 
 import SwiftUI

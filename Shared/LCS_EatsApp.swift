@@ -2,7 +2,7 @@
 //  LCS_EatsApp.swift
 //  Shared
 //
-//  Created by Doggett, Scott on 2021-01-28.
+//  Created on 2021-01-28.
 //
 // Reasource used to create badge in tab view.
 // Accessed 2021-03-21

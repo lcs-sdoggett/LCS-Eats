@@ -2,7 +2,7 @@
 //  FormatEmail.swift
 //  LCS Eats
 //
-//  Created by Doggett, Scott on 2021-04-08.
+//  Created on 2021-04-08.
 //
 
 import Foundation

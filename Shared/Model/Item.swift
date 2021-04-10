@@ -2,7 +2,7 @@
 //  MenuItems.swift
 //  LCS Eats
 //
-//  Created by Doggett, Scott on 2021-03-04.
+//  Created on 2021-03-04.
 //
 
 import Foundation
