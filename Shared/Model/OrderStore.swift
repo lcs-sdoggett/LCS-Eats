@@ -15,7 +15,7 @@ class OrderStore: ObservableObject {
     }
     
     // Function that returns the items that should be displayed based on the item type, chosen by the user
-    func filteredItems(menu: [Item], itemType: FoodType, order: Order) -> [Item] {
+    func filteredItems(menu: [Item], itemType: FoodType) -> [Item] {
         
         if itemType == FoodType.all {
             // If the user wants to see all the items, return the menu of the restaurant they chose

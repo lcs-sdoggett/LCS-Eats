@@ -63,7 +63,7 @@ struct LCS_EatsApp: App {
                         Circle()
                             .foregroundColor(.red)
                         
-                        // THe number in the badge changes based on number of items in the order
+                        // The number in the badge changes based on number of items in the order
                         Text("\(order.items.count)")
                             .foregroundColor(.white)
                             .font(Font.system(size: 12))

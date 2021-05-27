@@ -136,12 +136,12 @@ struct CheckoutView: View {
                     Spacer()
                     
                     Button(action: {
-
+                        
+                        // Create message based on the order
                         let message = returnMessage(order: order)
-                        
-                        print(message)
-                        
+                                                
                         do {
+                            // Try to prepare email to be sent
                             try EmailHelper.shared.sendEmail(subject: "LCS Eats Order", body: message)
                         } catch {
                             showingEmailAlert = true

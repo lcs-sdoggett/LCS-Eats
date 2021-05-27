@@ -21,9 +21,9 @@ struct MenuView: View {
     // Sends a different menu based on the restaurant that was chosen. Returns a list of items that will be shown in the
     var itemList: [Item] {
         if order.restaurant.rawValue == "Mcdonald's" {
-            return store.filteredItems(menu: menu.mcdonaldsMenu, itemType: itemType, order: order)
+            return store.filteredItems(menu: menu.mcdonaldsMenu, itemType: itemType)
         } else {
-            return store.filteredItems(menu: menu.timsMenu, itemType: itemType, order: order)
+            return store.filteredItems(menu: menu.timsMenu, itemType: itemType)
         }
     }
     
