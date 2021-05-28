@@ -33,6 +33,14 @@ struct LCS_EatsApp: App {
                     Text("Info")
                 }
                 
+//                NavigationView {
+//                    OnboardingView(data: OnboardingData)
+//                }
+//                .tabItem {
+//                    Image(<#T##name: String##String#>)
+//                    Text("Help")
+//                }
+                
             }
         }
     }
