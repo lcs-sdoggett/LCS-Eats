@@ -11,6 +11,8 @@ struct OnboardingView: View {
     var data: OnboardingData
 
     @State private var isAnimating: Bool = false
+    
+    @StateObject private var store = OrderStore(orders: testData)
 
     var body: some View {
         VStack(spacing: 20) {
@@ -45,6 +47,8 @@ struct OnboardingView: View {
 
             Button(action: {
                 // Add action for button
+//               NavigationLink(<#T##titleKey: LocalizedStringKey##LocalizedStringKey#>, destination: CreateOrderView)
+                
             }, label: {
                 Text("Get Started")
                     .font(.headline)
