@@ -12,6 +12,10 @@ struct LCS_EatsApp: App {
     
     @StateObject private var store = OrderStore(orders: testData)
     
+    @State private var currentTab = 0
+    
+    var firstTime = true
+    
     var body: some Scene {
         WindowGroup {
             
@@ -33,7 +37,26 @@ struct LCS_EatsApp: App {
                     Text("Info")
                 }
                 
+                NavigationView {
+                    
+                    TabView(selection: $currentTab,
+                                    content:  {
+                                        ForEach(OnboardingData.list) { viewData in
+                                            OnboardingView(data: viewData)
+                                                .tag(viewData.id)
+                                        }
+                                    })
+                                .tabViewStyle(PageTabViewStyle())
+                                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+                        }
+                .tabItem {
+                    Image(systemName: "questionmark")
+                    Text("Help")
+                    
+                    }
+                }
+                
             }
         }
     }
-}
+
